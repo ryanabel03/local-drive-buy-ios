@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9511FBC216EE6142002D5862 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9511FBC116EE6142002D5862 /* CoreLocation.framework */; };
+		9511FBC516EE6183002D5862 /* CoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9511FBC416EE6183002D5862 /* CoreLocationController.m */; };
+		95A3E8BF16EE5A1200A8248A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8BE16EE5A1200A8248A /* UIKit.framework */; };
+		95A3E8C116EE5A1200A8248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8C016EE5A1200A8248A /* Foundation.framework */; };
+		95A3E8C316EE5A1200A8248A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8C216EE5A1200A8248A /* CoreGraphics.framework */; };
+		95A3E8C916EE5A1200A8248A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8C716EE5A1200A8248A /* InfoPlist.strings */; };
+		95A3E8CB16EE5A1200A8248A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3E8CA16EE5A1200A8248A /* main.m */; };
+		95A3E8CF16EE5A1200A8248A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3E8CE16EE5A1200A8248A /* AppDelegate.m */; };
+		95A3E8D116EE5A1200A8248A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8D016EE5A1200A8248A /* Default.png */; };
+		95A3E8D316EE5A1200A8248A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8D216EE5A1200A8248A /* Default@2x.png */; };
+		95A3E8D516EE5A1200A8248A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8D416EE5A1200A8248A /* Default-568h@2x.png */; };
+		95A3E8D816EE5A1200A8248A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8D616EE5A1200A8248A /* MainStoryboard_iPhone.storyboard */; };
+		95A3E8DB16EE5A1200A8248A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8D916EE5A1200A8248A /* MainStoryboard_iPad.storyboard */; };
+		95A3E8DE16EE5A1200A8248A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3E8DD16EE5A1200A8248A /* FirstViewController.m */; };
+		95A3E8E016EE5A1200A8248A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8DF16EE5A1200A8248A /* first.png */; };
+		95A3E8E216EE5A1200A8248A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8E116EE5A1200A8248A /* first@2x.png */; };
+		95A3E8E516EE5A1200A8248A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3E8E416EE5A1200A8248A /* SecondViewController.m */; };
+		95A3E8E716EE5A1200A8248A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8E616EE5A1200A8248A /* second.png */; };
+		95A3E8E916EE5A1200A8248A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8E816EE5A1200A8248A /* second@2x.png */; };
+		95A3E8F116EE5A1200A8248A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8F016EE5A1200A8248A /* SenTestingKit.framework */; };
+		95A3E8F216EE5A1200A8248A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8BE16EE5A1200A8248A /* UIKit.framework */; };
+		95A3E8F316EE5A1200A8248A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A3E8C016EE5A1200A8248A /* Foundation.framework */; };
+		95A3E8FB16EE5A1200A8248A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A3E8F916EE5A1200A8248A /* InfoPlist.strings */; };
+		95A3E8FE16EE5A1200A8248A /* Local_Drive_BuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3E8FD16EE5A1200A8248A /* Local_Drive_BuyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95A3E8F416EE5A1200A8248A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A3E8B116EE5A1200A8248A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95A3E8B916EE5A1200A8248A;
+			remoteInfo = "Local-Drive-Buy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9511FBC116EE6142002D5862 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9511FBC316EE6183002D5862 /* CoreLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationController.h; sourceTree = "<group>"; };
+		9511FBC416EE6183002D5862 /* CoreLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationController.m; sourceTree = "<group>"; };
+		95A3E8BA16EE5A1200A8248A /* Local-Drive-Buy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local-Drive-Buy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A3E8BE16EE5A1200A8248A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95A3E8C016EE5A1200A8248A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		95A3E8C216EE5A1200A8248A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95A3E8C616EE5A1200A8248A /* Local-Drive-Buy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Local-Drive-Buy-Info.plist"; sourceTree = "<group>"; };
+		95A3E8C816EE5A1200A8248A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95A3E8CA16EE5A1200A8248A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95A3E8CC16EE5A1200A8248A /* Local-Drive-Buy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Local-Drive-Buy-Prefix.pch"; sourceTree = "<group>"; };
+		95A3E8CD16EE5A1200A8248A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		95A3E8CE16EE5A1200A8248A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		95A3E8D016EE5A1200A8248A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		95A3E8D216EE5A1200A8248A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95A3E8D416EE5A1200A8248A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95A3E8D716EE5A1200A8248A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		95A3E8DA16EE5A1200A8248A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		95A3E8DC16EE5A1200A8248A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		95A3E8DD16EE5A1200A8248A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		95A3E8DF16EE5A1200A8248A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		95A3E8E116EE5A1200A8248A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		95A3E8E316EE5A1200A8248A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		95A3E8E416EE5A1200A8248A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		95A3E8E616EE5A1200A8248A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		95A3E8E816EE5A1200A8248A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		95A3E8EF16EE5A1200A8248A /* Local-Drive-BuyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Local-Drive-BuyTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A3E8F016EE5A1200A8248A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		95A3E8F816EE5A1200A8248A /* Local-Drive-BuyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Local-Drive-BuyTests-Info.plist"; sourceTree = "<group>"; };
+		95A3E8FA16EE5A1200A8248A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95A3E8FC16EE5A1200A8248A /* Local_Drive_BuyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Local_Drive_BuyTests.h; sourceTree = "<group>"; };
+		95A3E8FD16EE5A1200A8248A /* Local_Drive_BuyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Local_Drive_BuyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95A3E8B716EE5A1200A8248A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9511FBC216EE6142002D5862 /* CoreLocation.framework in Frameworks */,
+				95A3E8BF16EE5A1200A8248A /* UIKit.framework in Frameworks */,
+				95A3E8C116EE5A1200A8248A /* Foundation.framework in Frameworks */,
+				95A3E8C316EE5A1200A8248A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A3E8EB16EE5A1200A8248A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A3E8F116EE5A1200A8248A /* SenTestingKit.framework in Frameworks */,
+				95A3E8F216EE5A1200A8248A /* UIKit.framework in Frameworks */,
+				95A3E8F316EE5A1200A8248A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95A3E8AF16EE5A1200A8248A = {
+			isa = PBXGroup;
+			children = (
+				95A3E8C416EE5A1200A8248A /* Local-Drive-Buy */,
+				95A3E8F616EE5A1200A8248A /* Local-Drive-BuyTests */,
+				95A3E8BD16EE5A1200A8248A /* Frameworks */,
+				95A3E8BB16EE5A1200A8248A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95A3E8BB16EE5A1200A8248A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95A3E8BA16EE5A1200A8248A /* Local-Drive-Buy.app */,
+				95A3E8EF16EE5A1200A8248A /* Local-Drive-BuyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95A3E8BD16EE5A1200A8248A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9511FBC116EE6142002D5862 /* CoreLocation.framework */,
+				95A3E8BE16EE5A1200A8248A /* UIKit.framework */,
+				95A3E8C016EE5A1200A8248A /* Foundation.framework */,
+				95A3E8C216EE5A1200A8248A /* CoreGraphics.framework */,
+				95A3E8F016EE5A1200A8248A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95A3E8C416EE5A1200A8248A /* Local-Drive-Buy */ = {
+			isa = PBXGroup;
+			children = (
+				9511FBC316EE6183002D5862 /* CoreLocationController.h */,
+				9511FBC416EE6183002D5862 /* CoreLocationController.m */,
+				95A3E8CD16EE5A1200A8248A /* AppDelegate.h */,
+				95A3E8CE16EE5A1200A8248A /* AppDelegate.m */,
+				95A3E8D616EE5A1200A8248A /* MainStoryboard_iPhone.storyboard */,
+				95A3E8D916EE5A1200A8248A /* MainStoryboard_iPad.storyboard */,
+				95A3E8DC16EE5A1200A8248A /* FirstViewController.h */,
+				95A3E8DD16EE5A1200A8248A /* FirstViewController.m */,
+				95A3E8DF16EE5A1200A8248A /* first.png */,
+				95A3E8E116EE5A1200A8248A /* first@2x.png */,
+				95A3E8E316EE5A1200A8248A /* SecondViewController.h */,
+				95A3E8E416EE5A1200A8248A /* SecondViewController.m */,
+				95A3E8E616EE5A1200A8248A /* second.png */,
+				95A3E8E816EE5A1200A8248A /* second@2x.png */,
+				95A3E8C516EE5A1200A8248A /* Supporting Files */,
+			);
+			path = "Local-Drive-Buy";
+			sourceTree = "<group>";
+		};
+		95A3E8C516EE5A1200A8248A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95A3E8C616EE5A1200A8248A /* Local-Drive-Buy-Info.plist */,
+				95A3E8C716EE5A1200A8248A /* InfoPlist.strings */,
+				95A3E8CA16EE5A1200A8248A /* main.m */,
+				95A3E8CC16EE5A1200A8248A /* Local-Drive-Buy-Prefix.pch */,
+				95A3E8D016EE5A1200A8248A /* Default.png */,
+				95A3E8D216EE5A1200A8248A /* Default@2x.png */,
+				95A3E8D416EE5A1200A8248A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95A3E8F616EE5A1200A8248A /* Local-Drive-BuyTests */ = {
+			isa = PBXGroup;
+			children = (
+				95A3E8FC16EE5A1200A8248A /* Local_Drive_BuyTests.h */,
+				95A3E8FD16EE5A1200A8248A /* Local_Drive_BuyTests.m */,
+				95A3E8F716EE5A1200A8248A /* Supporting Files */,
+			);
+			path = "Local-Drive-BuyTests";
+			sourceTree = "<group>";
+		};
+		95A3E8F716EE5A1200A8248A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95A3E8F816EE5A1200A8248A /* Local-Drive-BuyTests-Info.plist */,
+				95A3E8F916EE5A1200A8248A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95A3E8B916EE5A1200A8248A /* Local-Drive-Buy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A3E90116EE5A1200A8248A /* Build configuration list for PBXNativeTarget "Local-Drive-Buy" */;
+			buildPhases = (
+				95A3E8B616EE5A1200A8248A /* Sources */,
+				95A3E8B716EE5A1200A8248A /* Frameworks */,
+				95A3E8B816EE5A1200A8248A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Local-Drive-Buy";
+			productName = "Local-Drive-Buy";
+			productReference = 95A3E8BA16EE5A1200A8248A /* Local-Drive-Buy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95A3E8EE16EE5A1200A8248A /* Local-Drive-BuyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A3E90416EE5A1200A8248A /* Build configuration list for PBXNativeTarget "Local-Drive-BuyTests" */;
+			buildPhases = (
+				95A3E8EA16EE5A1200A8248A /* Sources */,
+				95A3E8EB16EE5A1200A8248A /* Frameworks */,
+				95A3E8EC16EE5A1200A8248A /* Resources */,
+				95A3E8ED16EE5A1200A8248A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95A3E8F516EE5A1200A8248A /* PBXTargetDependency */,
+			);
+			name = "Local-Drive-BuyTests";
+			productName = "Local-Drive-BuyTests";
+			productReference = 95A3E8EF16EE5A1200A8248A /* Local-Drive-BuyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95A3E8B116EE5A1200A8248A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = CQL;
+			};
+			buildConfigurationList = 95A3E8B416EE5A1200A8248A /* Build configuration list for PBXProject "Local-Drive-Buy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 95A3E8AF16EE5A1200A8248A;
+			productRefGroup = 95A3E8BB16EE5A1200A8248A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95A3E8B916EE5A1200A8248A /* Local-Drive-Buy */,
+				95A3E8EE16EE5A1200A8248A /* Local-Drive-BuyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95A3E8B816EE5A1200A8248A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A3E8C916EE5A1200A8248A /* InfoPlist.strings in Resources */,
+				95A3E8D116EE5A1200A8248A /* Default.png in Resources */,
+				95A3E8D316EE5A1200A8248A /* Default@2x.png in Resources */,
+				95A3E8D516EE5A1200A8248A /* Default-568h@2x.png in Resources */,
+				95A3E8D816EE5A1200A8248A /* MainStoryboard_iPhone.storyboard in Resources */,
+				95A3E8DB16EE5A1200A8248A /* MainStoryboard_iPad.storyboard in Resources */,
+				95A3E8E016EE5A1200A8248A /* first.png in Resources */,
+				95A3E8E216EE5A1200A8248A /* first@2x.png in Resources */,
+				95A3E8E716EE5A1200A8248A /* second.png in Resources */,
+				95A3E8E916EE5A1200A8248A /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A3E8EC16EE5A1200A8248A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A3E8FB16EE5A1200A8248A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95A3E8ED16EE5A1200A8248A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95A3E8B616EE5A1200A8248A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A3E8CB16EE5A1200A8248A /* main.m in Sources */,
+				95A3E8CF16EE5A1200A8248A /* AppDelegate.m in Sources */,
+				95A3E8DE16EE5A1200A8248A /* FirstViewController.m in Sources */,
+				95A3E8E516EE5A1200A8248A /* SecondViewController.m in Sources */,
+				9511FBC516EE6183002D5862 /* CoreLocationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A3E8EA16EE5A1200A8248A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A3E8FE16EE5A1200A8248A /* Local_Drive_BuyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95A3E8F516EE5A1200A8248A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95A3E8B916EE5A1200A8248A /* Local-Drive-Buy */;
+			targetProxy = 95A3E8F416EE5A1200A8248A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95A3E8C716EE5A1200A8248A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A3E8C816EE5A1200A8248A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		95A3E8D616EE5A1200A8248A /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A3E8D716EE5A1200A8248A /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		95A3E8D916EE5A1200A8248A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A3E8DA16EE5A1200A8248A /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		95A3E8F916EE5A1200A8248A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A3E8FA16EE5A1200A8248A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95A3E8FF16EE5A1200A8248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95A3E90016EE5A1200A8248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95A3E90216EE5A1200A8248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
+				INFOPLIST_FILE = "Local-Drive-Buy/Local-Drive-Buy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		95A3E90316EE5A1200A8248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
+				INFOPLIST_FILE = "Local-Drive-Buy/Local-Drive-Buy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		95A3E90516EE5A1200A8248A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Local-Drive-Buy.app/Local-Drive-Buy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
+				INFOPLIST_FILE = "Local-Drive-BuyTests/Local-Drive-BuyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		95A3E90616EE5A1200A8248A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Local-Drive-Buy.app/Local-Drive-Buy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
+				INFOPLIST_FILE = "Local-Drive-BuyTests/Local-Drive-BuyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95A3E8B416EE5A1200A8248A /* Build configuration list for PBXProject "Local-Drive-Buy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A3E8FF16EE5A1200A8248A /* Debug */,
+				95A3E90016EE5A1200A8248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95A3E90116EE5A1200A8248A /* Build configuration list for PBXNativeTarget "Local-Drive-Buy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A3E90216EE5A1200A8248A /* Debug */,
+				95A3E90316EE5A1200A8248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95A3E90416EE5A1200A8248A /* Build configuration list for PBXNativeTarget "Local-Drive-BuyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A3E90516EE5A1200A8248A /* Debug */,
+				95A3E90616EE5A1200A8248A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95A3E8B116EE5A1200A8248A /* Project object */;
+}
