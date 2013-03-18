@@ -20,6 +20,9 @@
 
 @synthesize modelController = _modelController;
 
+@synthesize mapView;
+@synthesize locationManager;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -48,6 +51,9 @@
 
     // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
     self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
+    mapView.delegate = self;
+    locationManager.delegate = self;
+    [mapView setCenterCoordinate:locationManager.location.coordinate];
 }
 
 - (void)didReceiveMemoryWarning

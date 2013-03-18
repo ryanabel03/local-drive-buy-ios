@@ -481,6 +481,7 @@
 				95954DCB16F39F1900F1200B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95954DCC16F39F1900F1200B /* Build configuration list for PBXNativeTarget "Local-Drive-BuyTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				95954DCE16F39F1900F1200B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
