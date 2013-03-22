@@ -1,18 +1,18 @@
 //
-//  DataViewController.m
+//  FirstViewController.m
 //  Local-Drive-Buy
 //
-//  Created by Raymond J. Oesch on 3/15/13.
+//  Created by Raymond J. Oesch on 3/22/13.
 //  Copyright (c) 2013 GVSU. All rights reserved.
 //
 
-#import "DataViewController.h"
+#import "FirstViewController.h"
 
-@interface DataViewController ()
+@interface FirstViewController ()
 
 @end
 
-@implementation DataViewController
+@implementation FirstViewController
 
 - (void)viewDidLoad
 {
@@ -24,12 +24,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.dataLabel.text = [self.dataObject description];
 }
 
 @end
