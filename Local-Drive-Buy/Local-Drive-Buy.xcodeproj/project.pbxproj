@@ -174,12 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				5B7BF7211704C828001685C4 /* libxml2.dylib */,
-				5B7BF71F1704C81E001685C4 /* QuartzCore.framework */,
-				951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */,
-				951D5AEC16FCECC7007C435C /* Security.framework */,
-				951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */,
-				951D5AE816FCECA8007C435C /* CoreData.framework */,
-				951D5AE616FCEC94007C435C /* CFNetwork.framework */,
 				951D5A5F16FCD2D2007C435C /* Local-Drive-Buy */,
 				951D5A9116FCD2D3007C435C /* Local-Drive-BuyTests */,
 				951D5A5816FCD2D1007C435C /* Frameworks */,
@@ -200,6 +194,12 @@
 		951D5A5816FCD2D1007C435C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B7BF71F1704C81E001685C4 /* QuartzCore.framework */,
+				951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */,
+				951D5AEC16FCECC7007C435C /* Security.framework */,
+				951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */,
+				951D5AE816FCECA8007C435C /* CoreData.framework */,
+				951D5AE616FCEC94007C435C /* CFNetwork.framework */,
 				951D5AA416FCD2F4007C435C /* MapKit.framework */,
 				951D5AA216FCD2EA007C435C /* CoreLocation.framework */,
 				951D5A5916FCD2D2007C435C /* UIKit.framework */,
