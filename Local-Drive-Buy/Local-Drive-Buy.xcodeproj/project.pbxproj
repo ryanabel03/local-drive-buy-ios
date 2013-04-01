@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B7BF71E1704C7E1001685C4 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF7121704C3FA001685C4 /* libRestKit.a */; };
 		5B7BF7201704C81F001685C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF71F1704C81E001685C4 /* QuartzCore.framework */; };
 		5B7BF7221704C828001685C4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF7211704C828001685C4 /* libxml2.dylib */; };
 		951D5A5A16FCD2D2007C435C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5A5916FCD2D2007C435C /* UIKit.framework */; };
@@ -38,45 +37,12 @@
 		951D5AEB16FCECB9007C435C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */; };
 		951D5AED16FCECC7007C435C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEC16FCECC7007C435C /* Security.framework */; };
 		951D5AEF16FCECD6007C435C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */; };
+		956767DD170A0CA800387097 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DC170A0CA800387097 /* MasterViewController.m */; };
+		956767E0170A0F0D00387097 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DF170A0F0D00387097 /* DetailViewController.m */; };
 		9598CE6D170614060036A10E /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9598CE6C170614060036A10E /* Listing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5B7BF7111704C3FA001685C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D1614564E810060A5C5;
-			remoteInfo = RestKit;
-		};
-		5B7BF7131704C3FA001685C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160D2614564E820060A5C5;
-			remoteInfo = RestKitTests;
-		};
-		5B7BF7151704C3FA001685C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E62145651060060A5C5;
-			remoteInfo = RestKitFramework;
-		};
-		5B7BF7171704C3FA001685C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25160E78145651060060A5C5;
-			remoteInfo = RestKitFrameworkTests;
-		};
-		5B7BF71B1704C5A2001685C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 25160D1514564E810060A5C5;
-			remoteInfo = RestKit;
-		};
 		951D5A8F16FCD2D3007C435C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 951D5A4C16FCD2D1007C435C /* Project object */;
@@ -115,7 +81,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../../../Downloads/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		5B7BF71F1704C81E001685C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B7BF7211704C828001685C4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		951D5A5516FCD2D1007C435C /* Local-Drive-Buy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local-Drive-Buy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +117,10 @@
 		951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		951D5AEC16FCECC7007C435C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		956767DB170A0CA800387097 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		956767DC170A0CA800387097 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		956767DE170A0F0D00387097 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		956767DF170A0F0D00387097 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9598CE581706127F0036A10E /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		9598CE6B170614060036A10E /* Listing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
 		9598CE6C170614060036A10E /* Listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listing.m; sourceTree = "<group>"; };
@@ -168,7 +137,6 @@
 				951D5AEB16FCECB9007C435C /* MobileCoreServices.framework in Frameworks */,
 				951D5AE916FCECA8007C435C /* CoreData.framework in Frameworks */,
 				951D5AE716FCEC94007C435C /* CFNetwork.framework in Frameworks */,
-				5B7BF71E1704C7E1001685C4 /* libRestKit.a in Frameworks */,
 				951D5AEF16FCECD6007C435C /* SystemConfiguration.framework in Frameworks */,
 				951D5AA516FCD2F4007C435C /* MapKit.framework in Frameworks */,
 				951D5AA316FCD2EA007C435C /* CoreLocation.framework in Frameworks */,
@@ -191,17 +159,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B7BF7081704C3F9001685C4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5B7BF7121704C3FA001685C4 /* libRestKit.a */,
-				5B7BF7141704C3FA001685C4 /* RestKitTests.octest */,
-				5B7BF7161704C3FA001685C4 /* RestKit.framework */,
-				5B7BF7181704C3FA001685C4 /* RestKitFrameworkTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		951D5A4A16FCD2D1007C435C = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +168,6 @@
 				951D5A9116FCD2D3007C435C /* Local-Drive-BuyTests */,
 				951D5A5816FCD2D1007C435C /* Frameworks */,
 				951D5A5616FCD2D1007C435C /* Products */,
-				5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,6 +205,10 @@
 				951D5A6816FCD2D2007C435C /* AppDelegate.h */,
 				951D5A6916FCD2D2007C435C /* AppDelegate.m */,
 				951D5A7116FCD2D2007C435C /* MainStoryboard_iPhone.storyboard */,
+				956767DE170A0F0D00387097 /* DetailViewController.h */,
+				956767DF170A0F0D00387097 /* DetailViewController.m */,
+				956767DB170A0CA800387097 /* MasterViewController.h */,
+				956767DC170A0CA800387097 /* MasterViewController.m */,
 				9598CE6B170614060036A10E /* Listing.h */,
 				9598CE6C170614060036A10E /* Listing.m */,
 				951D5A7416FCD2D2007C435C /* MainStoryboard_iPad.storyboard */,
@@ -321,7 +281,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5B7BF71C1704C5A2001685C4 /* PBXTargetDependency */,
 			);
 			name = "Local-Drive-Buy";
 			productName = "Local-Drive-Buy";
@@ -371,10 +330,6 @@
 					ProductGroup = 9598CE591706127F0036A10E /* Products */;
 					ProjectRef = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
 				},
-				{
-					ProductGroup = 5B7BF7081704C3F9001685C4 /* Products */;
-					ProjectRef = 5B7BF7071704C3F9001685C4 /* RestKit.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -385,34 +340,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5B7BF7121704C3FA001685C4 /* libRestKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKit.a;
-			remoteRef = 5B7BF7111704C3FA001685C4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B7BF7141704C3FA001685C4 /* RestKitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitTests.octest;
-			remoteRef = 5B7BF7131704C3FA001685C4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B7BF7161704C3FA001685C4 /* RestKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RestKit.framework;
-			remoteRef = 5B7BF7151704C3FA001685C4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B7BF7181704C3FA001685C4 /* RestKitFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RestKitFrameworkTests.octest;
-			remoteRef = 5B7BF7171704C3FA001685C4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		9598CE63170612800036A10E /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -496,6 +423,8 @@
 				951D5A6A16FCD2D2007C435C /* AppDelegate.m in Sources */,
 				951D5A7916FCD2D2007C435C /* FirstViewController.m in Sources */,
 				9598CE6D170614060036A10E /* Listing.m in Sources */,
+				956767DD170A0CA800387097 /* MasterViewController.m in Sources */,
+				956767E0170A0F0D00387097 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,11 +439,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5B7BF71C1704C5A2001685C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RestKit;
-			targetProxy = 5B7BF71B1704C5A2001685C4 /* PBXContainerItemProxy */;
-		};
 		951D5A9016FCD2D3007C435C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 951D5A5416FCD2D1007C435C /* Local-Drive-Buy */;
