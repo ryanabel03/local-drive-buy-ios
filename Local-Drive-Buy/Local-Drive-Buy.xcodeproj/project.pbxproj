@@ -40,6 +40,7 @@
 		956767DD170A0CA800387097 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DC170A0CA800387097 /* MasterViewController.m */; };
 		956767E0170A0F0D00387097 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DF170A0F0D00387097 /* DetailViewController.m */; };
 		9598CE6D170614060036A10E /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9598CE6C170614060036A10E /* Listing.m */; };
+		95B0AAAD170E20F400859874 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B0AAAC170E20F400859874 /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,30 +51,30 @@
 			remoteGlobalIDString = 951D5A5416FCD2D1007C435C;
 			remoteInfo = "Local-Drive-Buy";
 		};
-		9598CE62170612800036A10E /* PBXContainerItemProxy */ = {
+		95B0AAA3170E19C300859874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
+			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D1614564E810060A5C5;
 			remoteInfo = RestKit;
 		};
-		9598CE64170612800036A10E /* PBXContainerItemProxy */ = {
+		95B0AAA5170E19C300859874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
+			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160D2614564E820060A5C5;
 			remoteInfo = RestKitTests;
 		};
-		9598CE66170612800036A10E /* PBXContainerItemProxy */ = {
+		95B0AAA7170E19C300859874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
+			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E62145651060060A5C5;
 			remoteInfo = RestKitFramework;
 		};
-		9598CE68170612800036A10E /* PBXContainerItemProxy */ = {
+		95B0AAA9170E19C300859874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
+			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 25160E78145651060060A5C5;
 			remoteInfo = RestKitFrameworkTests;
@@ -121,9 +122,10 @@
 		956767DC170A0CA800387097 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		956767DE170A0F0D00387097 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		956767DF170A0F0D00387097 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		9598CE581706127F0036A10E /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		9598CE6B170614060036A10E /* Listing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
 		9598CE6C170614060036A10E /* Listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listing.m; sourceTree = "<group>"; };
+		95B0AA99170E19C300859874 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		95B0AAAC170E20F400859874 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B0AAAD170E20F400859874 /* GLKit.framework in Frameworks */,
 				5B7BF7221704C828001685C4 /* libxml2.dylib in Frameworks */,
 				5B7BF7201704C81F001685C4 /* QuartzCore.framework in Frameworks */,
 				951D5AED16FCECC7007C435C /* Security.framework in Frameworks */,
@@ -162,12 +165,12 @@
 		951D5A4A16FCD2D1007C435C = {
 			isa = PBXGroup;
 			children = (
-				9598CE581706127F0036A10E /* RestKit.xcodeproj */,
 				5B7BF7211704C828001685C4 /* libxml2.dylib */,
 				951D5A5F16FCD2D2007C435C /* Local-Drive-Buy */,
 				951D5A9116FCD2D3007C435C /* Local-Drive-BuyTests */,
 				951D5A5816FCD2D1007C435C /* Frameworks */,
 				951D5A5616FCD2D1007C435C /* Products */,
+				95B0AA99170E19C300859874 /* RestKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +186,7 @@
 		951D5A5816FCD2D1007C435C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95B0AAAC170E20F400859874 /* GLKit.framework */,
 				5B7BF71F1704C81E001685C4 /* QuartzCore.framework */,
 				951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */,
 				951D5AEC16FCECC7007C435C /* Security.framework */,
@@ -256,13 +260,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9598CE591706127F0036A10E /* Products */ = {
+		95B0AA9A170E19C300859874 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9598CE63170612800036A10E /* libRestKit.a */,
-				9598CE65170612800036A10E /* RestKitTests.octest */,
-				9598CE67170612800036A10E /* RestKit.framework */,
-				9598CE69170612800036A10E /* RestKitFrameworkTests.octest */,
+				95B0AAA4170E19C300859874 /* libRestKit.a */,
+				95B0AAA6170E19C300859874 /* RestKitTests.octest */,
+				95B0AAA8170E19C300859874 /* RestKit.framework */,
+				95B0AAAA170E19C300859874 /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,8 +331,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9598CE591706127F0036A10E /* Products */;
-					ProjectRef = 9598CE581706127F0036A10E /* RestKit.xcodeproj */;
+					ProductGroup = 95B0AA9A170E19C300859874 /* Products */;
+					ProjectRef = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -340,32 +344,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9598CE63170612800036A10E /* libRestKit.a */ = {
+		95B0AAA4170E19C300859874 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRestKit.a;
-			remoteRef = 9598CE62170612800036A10E /* PBXContainerItemProxy */;
+			remoteRef = 95B0AAA3170E19C300859874 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9598CE65170612800036A10E /* RestKitTests.octest */ = {
+		95B0AAA6170E19C300859874 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitTests.octest;
-			remoteRef = 9598CE64170612800036A10E /* PBXContainerItemProxy */;
+			remoteRef = 95B0AAA5170E19C300859874 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9598CE67170612800036A10E /* RestKit.framework */ = {
+		95B0AAA8170E19C300859874 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RestKit.framework;
-			remoteRef = 9598CE66170612800036A10E /* PBXContainerItemProxy */;
+			remoteRef = 95B0AAA7170E19C300859874 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9598CE69170612800036A10E /* RestKitFrameworkTests.octest */ = {
+		95B0AAAA170E19C300859874 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RestKitFrameworkTests.octest;
-			remoteRef = 9598CE68170612800036A10E /* PBXContainerItemProxy */;
+			remoteRef = 95B0AAA9170E19C300859874 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

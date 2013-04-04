@@ -35,7 +35,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSURL * baseurl = [NSURL URLWithString:@"address"];
+    /*NSURL * baseurl = [NSURL URLWithString:@"address"];
     RKObjectManager * objectmanager = [RKObjectManager managerWithBaseURL:baseurl];
     RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
     [listingmapping addAttributeMappingsFromDictionary:@{
@@ -45,7 +45,11 @@
      @"address2": @"address2",
      @"city": @"city",
      @"state": @"state",
-     @"zip": @"zip"}];
+     @"zip": @"zip"}];*/
+    _objects = [[NSMutableArray alloc] init];
+    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
+                         @"description": @"A Listing",
+                         @"address1": @"1 Campus Drive"}]];
 }
 
 - (void)didReceiveMemoryWarning

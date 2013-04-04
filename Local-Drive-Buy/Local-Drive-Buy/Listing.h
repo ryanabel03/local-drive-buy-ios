@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface Listing : NSObject
 
@@ -17,7 +18,8 @@
 @property (nonatomic, strong) NSString * city;
 @property (nonatomic, strong) NSString * state;
 @property (nonatomic, strong) NSString * zip;
+@property (nonatomic, strong) CLLocation * location;
 
-- (id)init: withstring: (NSString *) info;
+- (id)init_withdict: (NSDictionary *) info;
 
 @end

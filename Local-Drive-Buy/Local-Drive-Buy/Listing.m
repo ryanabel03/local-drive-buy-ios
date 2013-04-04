@@ -10,9 +10,19 @@
 
 @implementation Listing
 
-- (id) init: withstring:(NSString *)info
+- (id)init_withdict:(NSDictionary *)info
 {
     self = [super init];
+    if (self)
+    {
+        _title = info[@"title"];
+        _description = info[@"description"];
+        _address1 = info[@"address1"];
+        _address2 = info[@"address2"];
+        _city = info[@"city"];
+        _state = info[@"state"];
+        _zip = info[@"zip"];
+    }
     
     return self;
 }
