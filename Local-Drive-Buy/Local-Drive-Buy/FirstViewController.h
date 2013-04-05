@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import "Listing.h"
+#import "MapAnnotation.h"
 
 @interface FirstViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
+
+@property (strong, nonatomic) MKAnnotationView *annotationview;
+
+@property (strong, nonatomic) NSMutableArray * objects;
 
 @end

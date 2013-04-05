@@ -13,4 +13,16 @@
 
 @property (strong, nonatomic) Listing * detailItem;
 
+@property (weak, nonatomic) IBOutlet UILabel *descriptionlabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *addr1label;
+
+@property (weak, nonatomic) IBOutlet UILabel *addr2label;
+
+@property (weak, nonatomic) IBOutlet UILabel *citylabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *statelabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *ziplabel;
+
 @end

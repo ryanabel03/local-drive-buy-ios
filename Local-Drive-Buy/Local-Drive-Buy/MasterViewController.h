@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RestKit/RestKit.h>
+//#import <RestKit/RestKit.h>
 #import "DetailViewController.h"
 
 @interface MasterViewController : UITableViewController

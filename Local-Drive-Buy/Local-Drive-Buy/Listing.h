@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString * city;
 @property (nonatomic, strong) NSString * state;
 @property (nonatomic, strong) NSString * zip;
-@property (nonatomic, strong) CLLocation * location;
+@property (nonatomic) CLLocationCoordinate2D location;
 
 - (id)init_withdict: (NSDictionary *) info;
 

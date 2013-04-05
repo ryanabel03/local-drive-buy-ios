@@ -26,6 +26,12 @@
 -(void) configureView
 {
     // Update the user interface for the detail item.
+    self.descriptionlabel.attributedText = self.detailItem.description;
+    self.addr1label.text = self.detailItem.address1;
+    self.addr2label.text = self.detailItem.address2;
+    self.citylabel.text = self.detailItem.city;
+    self.statelabel.text = self.detailItem.state;
+    self.ziplabel.text = self.detailItem.zip;
 }
 
 - (void)viewDidLoad

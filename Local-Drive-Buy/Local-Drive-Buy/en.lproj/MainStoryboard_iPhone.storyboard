@@ -82,7 +82,7 @@
                                     <constraint firstItem="UoR-IP-Rxd" firstAttribute="top" secondItem="itf-bl-zQ1" secondAttribute="top" constant="11" id="Kg0-YM-ZPF"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="VCq-yO-vPZ" kind="push" id="zbf-kO-bPV"/>
+                                    <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="zbf-kO-bPV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -100,9 +100,63 @@
                     <view key="view" contentMode="scaleToFill" id="1fy-v1-Yhe">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIu-D5-VgZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIy-Nz-dLS">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmk-96-jUP">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deh-pH-Opl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-2e-wdO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTr-iC-CzX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zIu-D5-VgZ" firstAttribute="leading" secondItem="1fy-v1-Yhe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2MS-Uc-7rQ"/>
+                            <constraint firstItem="dTr-iC-CzX" firstAttribute="baseline" secondItem="m9e-2e-wdO" secondAttribute="baseline" type="default" id="3H6-Uz-3Ez"/>
+                            <constraint firstItem="m9e-2e-wdO" firstAttribute="baseline" secondItem="Deh-pH-Opl" secondAttribute="baseline" type="default" id="BAK-UL-Jak"/>
+                            <constraint firstItem="hIy-Nz-dLS" firstAttribute="leading" secondItem="1fy-v1-Yhe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Cpq-HQ-DeC"/>
+                            <constraint firstItem="Deh-pH-Opl" firstAttribute="leading" secondItem="1fy-v1-Yhe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IGI-kd-M00"/>
+                            <constraint firstItem="kmk-96-jUP" firstAttribute="top" secondItem="hIy-Nz-dLS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PGF-JC-p2i"/>
+                            <constraint firstItem="hIy-Nz-dLS" firstAttribute="top" secondItem="zIu-D5-VgZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VzJ-g1-HDJ"/>
+                            <constraint firstItem="kmk-96-jUP" firstAttribute="leading" secondItem="1fy-v1-Yhe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yrz-rM-QvH"/>
+                            <constraint firstItem="m9e-2e-wdO" firstAttribute="leading" secondItem="Deh-pH-Opl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bCt-R8-Hhe"/>
+                            <constraint firstItem="dTr-iC-CzX" firstAttribute="leading" secondItem="m9e-2e-wdO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="dP9-je-BCh"/>
+                            <constraint firstItem="zIu-D5-VgZ" firstAttribute="top" secondItem="1fy-v1-Yhe" secondAttribute="top" constant="20" symbolic="YES" type="default" id="lwb-UN-2Im"/>
+                            <constraint firstItem="Deh-pH-Opl" firstAttribute="top" secondItem="kmk-96-jUP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="scs-ob-jxC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Gq-0L-igu"/>
+                    <connections>
+                        <outlet property="addr1label" destination="hIy-Nz-dLS" id="eCO-Cy-wIu"/>
+                        <outlet property="addr2label" destination="kmk-96-jUP" id="PbD-g4-Jab"/>
+                        <outlet property="citylabel" destination="Deh-pH-Opl" id="Ws2-mr-5BW"/>
+                        <outlet property="descriptionlabel" destination="zIu-D5-VgZ" id="XxQ-kj-edf"/>
+                        <outlet property="statelabel" destination="m9e-2e-wdO" id="6Ih-kA-JdE"/>
+                        <outlet property="ziplabel" destination="dTr-iC-CzX" id="782-Oc-tdR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXW-Nv-4W1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,7 +207,7 @@
                                     <constraint firstItem="aPB-1K-wHI" firstAttribute="top" secondItem="U8e-po-eey" secondAttribute="top" constant="11" id="jQa-h5-XQx"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="VCq-yO-vPZ" kind="push" id="95N-E5-OcJ"/>
+                                    <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="95N-E5-OcJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -209,7 +263,7 @@
                                     <constraint firstItem="L3P-xX-gHK" firstAttribute="top" secondItem="wJ1-pZ-4jf" secondAttribute="top" constant="11" id="b0O-fy-HsX"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="VCq-yO-vPZ" kind="push" id="rCU-eN-WUf"/>
+                                    <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="rCU-eN-WUf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -265,7 +319,7 @@
                                     <constraint firstItem="vUm-UO-kqi" firstAttribute="top" secondItem="F67-wM-KGZ" secondAttribute="top" constant="11" id="twX-3q-f6V"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="VCq-yO-vPZ" kind="push" id="7uT-86-L7s"/>
+                                    <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="7uT-86-L7s"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -299,6 +353,14 @@
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addr1label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="addr2label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="citylabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="statelabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ziplabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="FirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>

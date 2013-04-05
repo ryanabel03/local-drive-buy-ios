@@ -48,8 +48,17 @@
      @"zip": @"zip"}];*/
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
-                         @"description": @"A Listing",
-                         @"address1": @"1 Campus Drive"}]];
+                         @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
+                         @"address1": @"1 Campus Drive",
+                         @"city": @"Allendale",
+                         @"state": @"Michigan",
+                         @"zip": @"49401"}]];
+    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
+                         @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
+                         @"address1": @"123 Fake St.",
+                         @"city": @"Allendale",
+                         @"state": @"Michigan",
+                         @"zip": @"49401"}]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +87,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    Listing * object = _objects[indexPath.row];
+    cell.textLabel.text = [object title];
     
     return cell;
 }
