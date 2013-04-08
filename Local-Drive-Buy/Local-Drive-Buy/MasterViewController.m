@@ -55,7 +55,7 @@
                          @"zip": @"49401"}]];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
                          @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
-                         @"address1": @"123 Fake St.",
+                         @"address1": @"6370 Lake Michigan Dr",
                          @"city": @"Allendale",
                          @"state": @"Michigan",
                          @"zip": @"49401"}]];

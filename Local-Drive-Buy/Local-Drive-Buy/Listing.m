@@ -22,16 +22,35 @@
         _city = info[@"city"];
         _state = info[@"state"];
         _zip = info[@"zip"];
-        CLGeocoder * geocoder = [[CLGeocoder alloc] init];
-        NSString * addressstring = [self.address1 stringByAppendingString:[@", " stringByAppendingString:[self.address2 stringByAppendingString:[@", " stringByAppendingString:[self.city stringByAppendingString:[@", " stringByAppendingString:[self.state stringByAppendingString:[@", " stringByAppendingString:self.zip]]]]]]]];
-        [geocoder geocodeAddressString:addressstring completionHandler:^(NSArray * placemarks, NSError * error)
-         {
-             if (placemarks)
+        if (self.address1 != @"")
+        {
+            NSString * addressstring = self.address1;
+            CLGeocoder * geocoder = [[CLGeocoder alloc] init];
+            if (self.address2 != @"")
+            {
+                addressstring = [addressstring stringByAppendingString:[@", " stringByAppendingString:self.address2]];
+            }
+            if (self.city != @"")
+            {
+                addressstring = [addressstring stringByAppendingString:[@", " stringByAppendingString:self.city]];
+            }
+            if (self.state != @"")
+            {
+                addressstring = [addressstring stringByAppendingString:[@", " stringByAppendingString:self.state]];
+            }
+            if (self.zip != @"")
+            {
+                addressstring = [addressstring stringByAppendingString:[@", " stringByAppendingString:self.zip]];
+            }
+            [geocoder geocodeAddressString:addressstring completionHandler:^(NSArray * placemarks, NSError * error)
              {
-                 CLPlacemark *possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
-                 _location = possiblelocation.location.coordinate;
-             }
-         }];
+                 if (placemarks[0])
+                 {
+                     CLPlacemark * possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
+                     _coordinate = CLLocationCoordinate2DMake(possiblelocation.location.coordinate.latitude, possiblelocation.location.coordinate.longitude);
+                 }
+             }];
+        }
     }
     
     return self;

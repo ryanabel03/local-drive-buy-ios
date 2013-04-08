@@ -27,7 +27,7 @@
                          @"zip": @"49401"}]];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
                          @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
-                         @"address1": @"123 Fake St.",
+                         @"address1": @"6370 Lake Michigan Dr",
                          @"city": @"Allendale",
                          @"state": @"Michigan",
                          @"zip": @"49401"}]];
@@ -44,14 +44,47 @@
 {
     for (Listing * listing in _objects)
     {
-        MapAnnotation * annotation = [[MapAnnotation alloc] init_withlocation:listing.location];
-        //[self.mapview addAnnotation:annotation];
+        if (CLLocationCoordinate2DIsValid(listing.coordinate))
+        {
+            [self.mapview addAnnotation:listing];
+        }
     }
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.locmanager startMonitoringSignificantLocationChanges];
+    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, 25000, 25000)];
+}
+
+-(void) viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.locmanager stopMonitoringSignificantLocationChanges];
 }
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    return [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
+    MKAnnotationView * aview = [mapView dequeueReusableAnnotationViewWithIdentifier:@"annotation"];
+    if (!aview)
+    {
+        aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
+    }
+    aview.annotation = annotation;
+    aview.canShowCallout = TRUE;
+    aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    return aview;
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.mapview setCenterCoordinate:manager.location.coordinate];
 }
 
 @end

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Listing.h"
-#import "MapAnnotation.h"
 
-@interface FirstViewController : UIViewController <MKMapViewDelegate>
+@interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
+
+@property (strong, nonatomic) CLLocationManager * locmanager;
 
 @property (strong, nonatomic) MKAnnotationView *annotationview;
 

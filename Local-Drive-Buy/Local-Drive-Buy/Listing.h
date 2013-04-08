@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface Listing : NSObject
+@interface Listing : NSObject <MKAnnotation>
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSAttributedString * description;
@@ -18,7 +18,8 @@
 @property (nonatomic, strong) NSString * city;
 @property (nonatomic, strong) NSString * state;
 @property (nonatomic, strong) NSString * zip;
-@property (nonatomic) CLLocationCoordinate2D location;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic, strong) CLPlacemark * possiblelocation;
 
 - (id)init_withdict: (NSDictionary *) info;
 

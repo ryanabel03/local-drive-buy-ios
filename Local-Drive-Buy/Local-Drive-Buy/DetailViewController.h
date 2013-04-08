@@ -24,5 +24,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *statelabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *ziplabel;
-
 @end
