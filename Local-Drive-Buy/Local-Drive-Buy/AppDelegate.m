@@ -12,6 +12,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
+    
+	UIViewController* controller;
+	
+	self.slideoutController = [AMSlideOutNavigationController slideOutNavigation];
+	
+	[self.slideoutController addSectionWithTitle:@""];
+	
+	controller = [storyboard instantiateViewControllerWithIdentifier:@"firstScreen"];
+	[self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"First View" andIcon:@""];
+	
+	//controller = [storyboard instantiateViewControllerWithIdentifier:@"secondSwipeScreen"];
+	//[self.slideoutController addViewControllerToLastSection:controller tagged:2 withTitle:@"Second View" andIcon:@""];
+	
+    [self.window setRootViewController:self.slideoutController];
+    
     // Override point for customization after application launch.
     return YES;
 }

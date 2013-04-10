@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 //#import <RestKit/RestKit.h>
+#import <AMSlideOutNavigationController.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+//********
+@property (strong, nonatomic) AMSlideOutNavigationController*	slideoutController;
+//********
 
 @end
