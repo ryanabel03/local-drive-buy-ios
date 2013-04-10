@@ -35,8 +35,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    /*NSURL * baseurl = [NSURL URLWithString:@"address"];
-    RKObjectManager * objectmanager = [RKObjectManager managerWithBaseURL:baseurl];
+    /*NSURL * baseurl = [NSURL URLWithString:@"local-drive-buy.herokuapp.com/api/listings"];
+    AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    RKObjectManager * objectmanager = [RKObjectManager initWithHTTPClient:client];
     RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
     [listingmapping addAttributeMappingsFromDictionary:@{
      @"title": @"title",
