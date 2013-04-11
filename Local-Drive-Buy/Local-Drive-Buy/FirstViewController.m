@@ -18,20 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    _objects = [[NSMutableArray alloc] init];
-    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
-                         @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
-                         @"address1": @"1 Campus Drive",
-                         @"city": @"Allendale",
-                         @"state": @"Michigan",
-                         @"zip": @"49401"}]];
-    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
-                         @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
-                         @"address1": @"6370 Lake Michigan Dr",
-                         @"city": @"Allendale",
-                         @"state": @"Michigan",
-                         @"zip": @"49401"}]];
-    [self displayListings];
+    [self.mapview userTrackingMode];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +36,19 @@
             [self.mapview addAnnotation:listing];
         }
     }
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _objects = [[NSMutableArray alloc] init];
+    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
+                         @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
+                         @"address": @"1 Campus Drive, Allendale, Michigan, 49401"}]];
+    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
+                         @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
+                         @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401"}]];
+    [self displayListings];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -72,19 +72,15 @@
         aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
     }
     aview.annotation = annotation;
-    aview.canShowCallout = TRUE;
+    aview.canShowCallout = YES;
     aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    NSLog(@"%@", aview.rightCalloutAccessoryView);
     return aview;
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     
-}
-
--(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    [self.mapview setCenterCoordinate:manager.location.coordinate];
 }
 
 @end

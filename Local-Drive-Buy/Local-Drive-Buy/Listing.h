@@ -13,11 +13,9 @@
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSAttributedString * description;
-@property (nonatomic, strong) NSString * address1;
-@property (nonatomic, strong) NSString * address2;
-@property (nonatomic, strong) NSString * city;
-@property (nonatomic, strong) NSString * state;
-@property (nonatomic, strong) NSString * zip;
+@property (nonatomic, strong) NSString * address;
+@property (nonatomic, strong) NSString * category;
+@property (nonatomic, strong) NSString * subcategory;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) CLPlacemark * possiblelocation;
 

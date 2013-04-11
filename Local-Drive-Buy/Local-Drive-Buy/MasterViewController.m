@@ -7,6 +7,7 @@
 //
 
 #import "MasterViewController.h"
+#import <RestKit/RestKit.h>
 
 @interface MasterViewController ()
 {
@@ -38,29 +39,38 @@
     /*NSURL * baseurl = [NSURL URLWithString:@"local-drive-buy.herokuapp.com/api/listings"];
     AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
-    RKObjectManager * objectmanager = [RKObjectManager initWithHTTPClient:client];
+    RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
     RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
     [listingmapping addAttributeMappingsFromDictionary:@{
      @"title": @"title",
      @"desription": @"description",
-     @"address1": @"address1",
-     @"address2": @"address2",
-     @"city": @"city",
-     @"state": @"state",
-     @"zip": @"zip"}];*/
+     @"address": @"address",
+     @"category": @"category",
+     @"subcategory": @"sub_category"}];
+    RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:@"response.listings" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectmanager addResponseDescriptor:responsedescriptor];
+    [objectmanager getObjectsAtPath:@"local-drive-buy.herokuapp.com/api/listings" parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
+     {
+         NSArray * result = [mappingresult array];
+         _objects = [result mutableCopy];
+         [self.tableView reloadData];
+     }
+                            failure:^(RKObjectRequestOperation * operation, NSError * error)
+     {
+         NSLog(@"failure: operation: %@ \n\nerror: %@", operation, error);
+     }];*/
+     
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
                          @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
-                         @"address1": @"1 Campus Drive",
-                         @"city": @"Allendale",
-                         @"state": @"Michigan",
-                         @"zip": @"49401"}]];
+                         @"address": @"1 Campus Drive, Allendale, Michigan, 49401",
+                         @"category": @"Edibles",
+                         @"subcategory": @"Restaurant"}]];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
                          @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
-                         @"address1": @"6370 Lake Michigan Dr",
-                         @"city": @"Allendale",
-                         @"state": @"Michigan",
-                         @"zip": @"49401"}]];
+                         @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401",
+                         @"category": @"Goods",
+                         @"subcategory": @"Brewery / Winery"}]];
 }
 
 - (void)didReceiveMemoryWarning

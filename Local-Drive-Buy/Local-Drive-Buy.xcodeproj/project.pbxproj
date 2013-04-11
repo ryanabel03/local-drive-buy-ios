@@ -56,6 +56,13 @@
 			remoteGlobalIDString = 951D5A5416FCD2D1007C435C;
 			remoteInfo = "Local-Drive-Buy";
 		};
+		9584640717173909009A00CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 		95B0AAA3170E19C300859874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95B0AA99170E19C300859874 /* RestKit.xcodeproj */;
@@ -316,6 +323,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9584640817173909009A00CD /* PBXTargetDependency */,
 			);
 			name = "Local-Drive-Buy";
 			productName = "Local-Drive-Buy";
@@ -483,6 +491,11 @@
 			isa = PBXTargetDependency;
 			target = 951D5A5416FCD2D1007C435C /* Local-Drive-Buy */;
 			targetProxy = 951D5A8F16FCD2D3007C435C /* PBXContainerItemProxy */;
+		};
+		9584640817173909009A00CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 9584640717173909009A00CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
