@@ -25,6 +25,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="7"/>
                     <connections>
                         <outlet property="mapview" destination="AH2-8U-9s9" id="NIS-hY-ot3"/>
+                        <segue destination="VCq-yO-vPZ" kind="modal" identifier="showDetail" id="40d-89-9JF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -98,7 +99,7 @@
             <objects>
                 <viewController id="VCq-yO-vPZ" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1fy-v1-Yhe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIu-D5-VgZ">
@@ -338,6 +339,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zbf-kO-bPV"/>
+        <segue reference="40d-89-9JF"/>
     </inferredMetricsTieBreakers>
 </document>

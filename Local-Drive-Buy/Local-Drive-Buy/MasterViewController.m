@@ -36,20 +36,21 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    /*NSURL * baseurl = [NSURL URLWithString:@"local-drive-buy.herokuapp.com/api/listings"];
+    /*NSURL * baseurl = [NSURL URLWithString:@"http://local-drive-buy.herokuapp.com/api/listings"];
     AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
     RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
     [listingmapping addAttributeMappingsFromDictionary:@{
      @"title": @"title",
-     @"desription": @"description",
+     @"description": @"description",
      @"address": @"address",
      @"category": @"category",
-     @"subcategory": @"sub_category"}];
-    RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:@"response.listings" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+     @"sub_category": @"subcategory"
+     }];
+    RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectmanager addResponseDescriptor:responsedescriptor];
-    [objectmanager getObjectsAtPath:@"local-drive-buy.herokuapp.com/api/listings" parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
+    [objectmanager getObjectsAtPath:@"http://local-drive-buy.herokuapp.com/api/listings" parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
      {
          NSArray * result = [mappingresult array];
          _objects = [result mutableCopy];
