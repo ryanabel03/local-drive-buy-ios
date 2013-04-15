@@ -1,22 +1,19 @@
 //
-//  MasterViewController.m
+//  SearchViewController.m
 //  Local-Drive-Buy
 //
-//  Created by Raymond J. Oesch on 4/1/13.
+//  Created by Raymond J. Oesch on 4/15/13.
 //  Copyright (c) 2013 GVSU. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import <RestKit/RestKit.h>
+#import "SearchViewController.h"
+#import "Listing.h"
 
-@interface MasterViewController ()
-{
-    NSMutableArray *_objects;
-}
+@interface SearchViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation SearchViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,39 +33,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSURL * baseurl = [NSURL URLWithString:@"http://local-drive-buy.herokuapp.com/"];
-    AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
-    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
-    RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
-    [listingmapping addAttributeMappingsFromDictionary:@{
-     @"title": @"title",
-     @"description": @"description",
-     @"address": @"address",
-     @"category": @"category",
-     @"sub_category": @"subcategory"
-     }];
-    RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    [objectmanager addResponseDescriptor:responsedescriptor];
-    NSDictionary * requestparams;
-    if ([self.title isEqualToString:@"All"])
-    {
-        requestparams = @{};
-    }
-    else
-    {
-        requestparams = @{@"category": self.title};
-    }
-    [objectmanager getObjectsAtPath:@"http://local-drive-buy.herokuapp.com/api/listings" parameters:requestparams success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
-     {
-         NSArray * result = [mappingresult array];
-         _objects = [result mutableCopy];
-         [self.tableView reloadData];
-     }
-                            failure:^(RKObjectRequestOperation * operation, NSError * error)
-     {
-         NSLog(@"failure: operation: %@ \n\nerror: %@", operation, error);
-     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,21 +117,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-    {
-        Listing *object = _objects[indexPath.row];
-        self.detailViewController.detailItem = object;
-    }
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"])
-    {
-        NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
-        Listing * object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
 }
 
 @end

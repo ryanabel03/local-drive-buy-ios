@@ -21,4 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *sublabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imagedisplay;
+
 @end

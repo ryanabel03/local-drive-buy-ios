@@ -7,6 +7,9 @@
 //
 
 #import "FirstViewController.h"
+#import "DetailViewController.h"
+
+#define MAPZOOM 25000
 
 @interface FirstViewController ()
 
@@ -18,6 +21,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
+    [self.navigationItem setTitleView:titleview];
+    [self.searchbar setDelegate:self];
     [self.mapview setDelegate:self];
     [self.mapview userTrackingMode];
 }
@@ -45,10 +51,15 @@
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
                          @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
-                         @"address": @"1 Campus Drive, Allendale, Michigan, 49401"}]];
+                         @"address": @"1 Campus Drive, Allendale, Michigan, 49401",
+                         @"category": @"Goods",
+                         @"subcategory": @"Arts & Crafts",
+                         @"imageaddress": [[NSURL alloc] initWithString:@"https://si0.twimg.com/profile_images/1653774189/CQL_Logo_Small.jpg"]}]];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
                          @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
-                         @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401"}]];
+                         @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401",
+                         @"category": @"Edibles",
+                         @"subcategory": @"Farmer's Market"}]];
     [self displayListings];
 }
 
@@ -56,7 +67,7 @@
 {
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
-    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, 25000, 25000)];
+    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, MAPZOOM, MAPZOOM)];
 }
 
 -(void) viewDidDisappear:(BOOL)animated
@@ -74,9 +85,11 @@
         {
             aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         }
+        Listing * l = annotation;
         aview.annotation = annotation;
         aview.canShowCallout = YES;
         aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        UIImageView * left = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:l.imageaddress]]];
         NSLog(@"%@", aview.rightCalloutAccessoryView);
         return aview;
     }
@@ -85,7 +98,51 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    [self performSegueWithIdentifier:@"showDetail" sender:view.annotation];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        Listing * object = sender;
+        [[segue destinationViewController] setDetailItem:object];
+    }
+    else if ([[segue identifier] isEqualToString:@"search"])
+    {
+        NSArray * objects = sender;
+        [[segue destinationViewController] setObjects:[objects mutableCopy]];
+    }
+}
+
+-(void) filterContentForSearchText:(NSString *)searchText
+{
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"SELF contains[cd] %@",
+                                    searchText];
+    
+    self.searchresults = [self.objects filteredArrayUsingPredicate:resultPredicate];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)handleSearch:(UISearchBar *)searchBar
+{
+    [self filterContentForSearchText:searchBar.text];
+    [self performSegueWithIdentifier:@"search" sender:self.searchresults];
+    NSLog(@"User searched for %@", searchBar.text);
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
+    NSLog(@"User canceled search");
+    [searchBar resignFirstResponder];
 }
 
 @end

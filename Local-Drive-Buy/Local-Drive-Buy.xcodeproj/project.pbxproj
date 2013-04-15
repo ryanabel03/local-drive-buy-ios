@@ -15,6 +15,9 @@
 		5B7BF7201704C81F001685C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF71F1704C81E001685C4 /* QuartzCore.framework */; };
 		5B7BF7221704C828001685C4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF7211704C828001685C4 /* libxml2.dylib */; };
 		950872D2171884BF00521728 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B0AAA4170E19C300859874 /* libRestKit.a */; };
+		9512574A171C85D600366C98 /* ldb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 95125749171C85D600366C98 /* ldb_logo.png */; };
+		9512574C171C87C400366C98 /* ldb_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9512574B171C87C400366C98 /* ldb_logo@2x.png */; };
+		9512574F171C922A00366C98 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9512574E171C922A00366C98 /* SearchViewController.m */; };
 		951D5A5A16FCD2D2007C435C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5A5916FCD2D2007C435C /* UIKit.framework */; };
 		951D5A5C16FCD2D2007C435C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5A5B16FCD2D2007C435C /* Foundation.framework */; };
 		951D5A5E16FCD2D2007C435C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5A5D16FCD2D2007C435C /* CoreGraphics.framework */; };
@@ -106,6 +109,10 @@
 		5B53027917149E1A00161052 /* iconSlide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconSlide@2x.png"; sourceTree = "<group>"; };
 		5B7BF71F1704C81E001685C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B7BF7211704C828001685C4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		95125749171C85D600366C98 /* ldb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ldb_logo.png; sourceTree = "<group>"; };
+		9512574B171C87C400366C98 /* ldb_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ldb_logo@2x.png"; sourceTree = "<group>"; };
+		9512574D171C922A00366C98 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		9512574E171C922A00366C98 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		951D5A5516FCD2D1007C435C /* Local-Drive-Buy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Local-Drive-Buy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		951D5A5916FCD2D2007C435C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		951D5A5B16FCD2D2007C435C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,6 +265,8 @@
 				951D5A7416FCD2D2007C435C /* MainStoryboard_iPad.storyboard */,
 				951D5A7716FCD2D2007C435C /* FirstViewController.h */,
 				951D5A7816FCD2D2007C435C /* FirstViewController.m */,
+				9512574D171C922A00366C98 /* SearchViewController.h */,
+				9512574E171C922A00366C98 /* SearchViewController.m */,
 				951D5A7A16FCD2D2007C435C /* first.png */,
 				951D5A7C16FCD2D2007C435C /* first@2x.png */,
 				951D5A8116FCD2D2007C435C /* second.png */,
@@ -274,6 +283,8 @@
 				951D5A6216FCD2D2007C435C /* InfoPlist.strings */,
 				951D5A6516FCD2D2007C435C /* main.m */,
 				951D5A6716FCD2D2007C435C /* Local-Drive-Buy-Prefix.pch */,
+				95125749171C85D600366C98 /* ldb_logo.png */,
+				9512574B171C87C400366C98 /* ldb_logo@2x.png */,
 				951D5A6B16FCD2D2007C435C /* Default.png */,
 				951D5A6D16FCD2D2007C435C /* Default@2x.png */,
 				951D5A6F16FCD2D2007C435C /* Default-568h@2x.png */,
@@ -432,6 +443,8 @@
 				951D5A8416FCD2D2007C435C /* second@2x.png in Resources */,
 				5B53027D17149E1A00161052 /* iconSlide.png in Resources */,
 				5B53027E17149E1A00161052 /* iconSlide@2x.png in Resources */,
+				9512574A171C85D600366C98 /* ldb_logo.png in Resources */,
+				9512574C171C87C400366C98 /* ldb_logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +488,7 @@
 				5B53027A17149E1A00161052 /* AMSlideOutNavigationController.m in Sources */,
 				5B53027B17149E1A00161052 /* AMSlideTableCell.m in Sources */,
 				5B53027C17149E1A00161052 /* AMSlideTableHeader.m in Sources */,
+				9512574F171C922A00366C98 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

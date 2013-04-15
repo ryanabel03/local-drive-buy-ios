@@ -20,6 +20,7 @@
         _address = info[@"address"];
         _category = info[@"category"];
         _subcategory = info[@"subcategory"];
+        _imageaddress = info[@"imageaddress"];
         if (self.address != @"")
         {
             CLGeocoder * geocoder = [[CLGeocoder alloc] init];

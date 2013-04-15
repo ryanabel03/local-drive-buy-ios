@@ -31,6 +31,9 @@
     self.addresslabel.text = self.detailItem.address;
     self.categorylabel.text = self.detailItem.category;
     self.sublabel.text = self.detailItem.subcategory;
+    NSData * imagedata = [[NSData alloc] initWithContentsOfURL:self.detailItem.imageaddress];
+    UIImage * image = [[UIImage alloc] initWithData:imagedata];
+    self.imagedisplay.image = image;
 }
 
 - (void)viewDidLoad

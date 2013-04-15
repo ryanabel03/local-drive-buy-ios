@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Listing.h"
 
-@interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapview;
 
@@ -18,5 +18,9 @@
 @property (strong, nonatomic) MKAnnotationView *annotationview;
 
 @property (strong, nonatomic) NSMutableArray * objects;
+
+@property (strong, nonatomic) NSArray * searchresults;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
 
 @end
