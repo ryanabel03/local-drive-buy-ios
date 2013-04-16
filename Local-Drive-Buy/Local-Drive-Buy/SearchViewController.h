@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
 @interface SearchViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray * objects;
+
+@property (nonatomic, strong) DetailViewController * detailViewController;
 
 @end

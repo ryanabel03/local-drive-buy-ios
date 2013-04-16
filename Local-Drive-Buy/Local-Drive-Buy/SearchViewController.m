@@ -117,6 +117,21 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        Listing *object = _objects[indexPath.row];
+        self.detailViewController.detailItem = object;
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+        Listing * object = _objects[indexPath.row];
+        [[segue destinationViewController] setDetailItem:object];
+    }
 }
 
 @end

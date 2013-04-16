@@ -50,14 +50,14 @@
                         <outlet property="mapview" destination="AH2-8U-9s9" id="NIS-hY-ot3"/>
                         <outlet property="searchbar" destination="pdt-li-OXG" id="FSg-hX-JiD"/>
                         <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="Cvy-G8-XZn"/>
-                        <segue destination="Rrh-KS-Vj4" kind="push" identifier="search" id="h2J-kz-Lxu"/>
+                        <segue destination="Rrh-KS-Vj4" kind="push" identifier="search" id="d1i-ex-lPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1131" y="-160"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search View Controller - Search Results-->
         <scene sceneID="dgB-i5-SOf">
             <objects>
                 <tableViewController id="Rrh-KS-Vj4" customClass="SearchViewController" sceneMemberID="viewController">
@@ -66,14 +66,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="DKf-pb-g55">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="DKf-pb-g55">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="VCq-yO-vPZ" kind="push" identifier="showDetail" id="qUx-zl-Icg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -81,7 +84,7 @@
                             <outlet property="delegate" destination="Rrh-KS-Vj4" id="mdg-3a-Whh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BjE-aL-rPU"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="BjE-aL-rPU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cul-VF-LF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXW-Nv-4W1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="1439"/>
+            <point key="canvasLocation" x="1918" y="1440"/>
         </scene>
         <!--Navigation Controller - All-->
         <scene sceneID="7AA-Nk-Sug">
@@ -403,6 +406,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cvy-G8-XZn"/>
+        <segue reference="qUx-zl-Icg"/>
     </inferredMetricsTieBreakers>
 </document>

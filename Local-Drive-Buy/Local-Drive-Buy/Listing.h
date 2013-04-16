@@ -19,6 +19,7 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) CLPlacemark * possiblelocation;
 @property (nonatomic, strong) NSURL * imageaddress;
+@property (nonatomic, strong) UIImage * image;
 
 - (id)init_withdict: (NSDictionary *) info;
 

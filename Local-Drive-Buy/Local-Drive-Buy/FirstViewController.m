@@ -24,6 +24,7 @@
     UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
     [self.navigationItem setTitleView:titleview];
     [self.searchbar setDelegate:self];
+    [self.locmanager setDelegate:self];
     [self.mapview setDelegate:self];
     [self.mapview userTrackingMode];
 }
@@ -40,7 +41,10 @@
     {
         if (CLLocationCoordinate2DIsValid(listing.coordinate))
         {
-            [self.mapview addAnnotation:listing];
+            if (pow((listing.coordinate.latitude - self.mapview.userLocation.coordinate.latitude), 2) + pow((listing.coordinate.longitude - self.mapview.userLocation.coordinate.longitude), 2) < MAPZOOM)
+            {
+                [self.mapview addAnnotation:listing];
+            }
         }
     }
 }
@@ -67,7 +71,6 @@
 {
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
-    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, MAPZOOM, MAPZOOM)];
 }
 
 -(void) viewDidDisappear:(BOOL)animated
@@ -89,7 +92,16 @@
         aview.annotation = annotation;
         aview.canShowCallout = YES;
         aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        UIImageView * left = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:l.imageaddress]]];
+        if (l.image)
+        {
+            UIImageView * left = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            left.image = l.image;
+            aview.leftCalloutAccessoryView = left;
+        }
+        else
+        {
+            aview.leftCalloutAccessoryView = nil;
+        }
         NSLog(@"%@", aview.rightCalloutAccessoryView);
         return aview;
     }
@@ -99,6 +111,11 @@
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     [self performSegueWithIdentifier:@"showDetail" sender:view.annotation];
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, MAPZOOM, MAPZOOM)];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -117,15 +134,15 @@
 
 -(void) filterContentForSearchText:(NSString *)searchText
 {
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
-                                    searchText];
-    
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.title contains[cd] %@", searchText];
     self.searchresults = [self.objects filteredArrayUsingPredicate:resultPredicate];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self handleSearch:searchBar];
+    NSLog(@"User searched for %@", searchBar.text);
+    [searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"search" sender:self.searchresults];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
@@ -135,9 +152,6 @@
 - (void)handleSearch:(UISearchBar *)searchBar
 {
     [self filterContentForSearchText:searchBar.text];
-    [self performSegueWithIdentifier:@"search" sender:self.searchresults];
-    NSLog(@"User searched for %@", searchBar.text);
-    [searchBar resignFirstResponder];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {

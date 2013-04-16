@@ -47,4 +47,13 @@
     return _address;
 }
 
+- (UIImage *) image
+{
+    if (!_image)
+    {
+        _image = [[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:self.imageaddress]];
+    }
+    return  _image;
+}
+
 @end
