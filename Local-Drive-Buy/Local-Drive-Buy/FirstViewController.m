@@ -21,8 +21,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
-    [self.navigationItem setTitleView:titleview];
     [self.searchbar setDelegate:self];
     [self.locmanager setDelegate:self];
     [self.mapview setDelegate:self];

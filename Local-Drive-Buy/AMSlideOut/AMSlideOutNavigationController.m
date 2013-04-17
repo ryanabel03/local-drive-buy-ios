@@ -123,6 +123,8 @@
 	[self.contentView removeFromSuperview];
 	[self.view addSubview:self.contentView];
 	[self.contentController.topViewController.navigationItem setLeftBarButtonItem:_barButton];
+    UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
+    [self.contentController.topViewController.navigationItem setTitleView:titleview];
 }
 
 - (void)loadView
@@ -165,7 +167,8 @@
 												  style:UIBarButtonItemStylePlain
 												 target:self
 												 action:@selector(toggleMenu)];
-	
+    
+    
 	// Detect when the content recieves a single tap
 	_tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
 	[_overlayView addGestureRecognizer:_tapGesture];
