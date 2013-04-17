@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-#import <RestKit/RestKit.h>
 
 @interface MasterViewController ()
 {
