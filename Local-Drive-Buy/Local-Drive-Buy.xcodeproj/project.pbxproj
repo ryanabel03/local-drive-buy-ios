@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		599DC9ADE0D94757876DEF04 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D191AFBD9D477B89D6F2FD /* libPods.a */; };
 		5B53027A17149E1A00161052 /* AMSlideOutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53027317149E1A00161052 /* AMSlideOutNavigationController.m */; };
 		5B53027B17149E1A00161052 /* AMSlideTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53027517149E1A00161052 /* AMSlideTableCell.m */; };
 		5B53027C17149E1A00161052 /* AMSlideTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B53027717149E1A00161052 /* AMSlideTableHeader.m */; };
@@ -49,6 +48,7 @@
 		956767DD170A0CA800387097 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DC170A0CA800387097 /* MasterViewController.m */; };
 		956767E0170A0F0D00387097 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DF170A0F0D00387097 /* DetailViewController.m */; };
 		9598CE6D170614060036A10E /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9598CE6C170614060036A10E /* Listing.m */; };
+		95A9168A1721C83000CADF8D /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A916831721C81900CADF8D /* libRestKit.a */; };
 		95B0AAAD170E20F400859874 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B0AAAC170E20F400859874 /* GLKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +59,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 951D5A5416FCD2D1007C435C;
 			remoteInfo = "Local-Drive-Buy";
+		};
+		95A916821721C81900CADF8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A916651721C77300CADF8D /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		95A916841721C81900CADF8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A916651721C77300CADF8D /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		95A916861721C81900CADF8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A916651721C77300CADF8D /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		95A916881721C81900CADF8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A916651721C77300CADF8D /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,7 +103,6 @@
 		5B7BF71F1704C81E001685C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B7BF7211704C828001685C4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		83D191AFBD9D477B89D6F2FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A0FA25832644B96B593E7E8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		95040D01171DDF7400794F1B /* ldb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ldb_logo.png; sourceTree = "<group>"; };
 		95040D03171DE0DE00794F1B /* ldb_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ldb_logo@2x.png"; sourceTree = "<group>"; };
 		9512574D171C922A00366C98 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -120,6 +147,7 @@
 		956767DF170A0F0D00387097 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		9598CE6B170614060036A10E /* Listing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
 		9598CE6C170614060036A10E /* Listing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Listing.m; sourceTree = "<group>"; };
+		95A916651721C77300CADF8D /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		95B0AAAC170E20F400859874 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -128,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95A9168A1721C83000CADF8D /* libRestKit.a in Frameworks */,
 				95B0AAAD170E20F400859874 /* GLKit.framework in Frameworks */,
 				5B7BF7221704C828001685C4 /* libxml2.dylib in Frameworks */,
 				5B7BF7201704C81F001685C4 /* QuartzCore.framework in Frameworks */,
@@ -141,7 +170,6 @@
 				951D5A5A16FCD2D2007C435C /* UIKit.framework in Frameworks */,
 				951D5A5C16FCD2D2007C435C /* Foundation.framework in Frameworks */,
 				951D5A5E16FCD2D2007C435C /* CoreGraphics.framework in Frameworks */,
-				599DC9ADE0D94757876DEF04 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +210,8 @@
 				951D5A9116FCD2D3007C435C /* Local-Drive-BuyTests */,
 				951D5A5816FCD2D1007C435C /* Frameworks */,
 				951D5A5616FCD2D1007C435C /* Products */,
+				95A916651721C77300CADF8D /* RestKit.xcodeproj */,
 				5B53027017149E1A00161052 /* AMSlideOut */,
-				8A0FA25832644B96B593E7E8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,6 +306,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95A9167C1721C81900CADF8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95A916831721C81900CADF8D /* libRestKit.a */,
+				95A916851721C81900CADF8D /* RestKitTests.octest */,
+				95A916871721C81900CADF8D /* RestKit.framework */,
+				95A916891721C81900CADF8D /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,11 +324,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 951D5A9C16FCD2D3007C435C /* Build configuration list for PBXNativeTarget "Local-Drive-Buy" */;
 			buildPhases = (
-				CBE70B308E6243779C7F6E96 /* Check Pods Manifest.lock */,
 				951D5A5116FCD2D1007C435C /* Sources */,
 				951D5A5216FCD2D1007C435C /* Frameworks */,
 				951D5A5316FCD2D1007C435C /* Resources */,
-				5DBE252F06CC454CA659D7C2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,6 +375,12 @@
 			mainGroup = 951D5A4A16FCD2D1007C435C;
 			productRefGroup = 951D5A5616FCD2D1007C435C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 95A9167C1721C81900CADF8D /* Products */;
+					ProjectRef = 95A916651721C77300CADF8D /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				951D5A5416FCD2D1007C435C /* Local-Drive-Buy */,
@@ -345,6 +388,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		95A916831721C81900CADF8D /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 95A916821721C81900CADF8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95A916851721C81900CADF8D /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 95A916841721C81900CADF8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95A916871721C81900CADF8D /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 95A916861721C81900CADF8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		95A916891721C81900CADF8D /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 95A916881721C81900CADF8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		951D5A5316FCD2D1007C435C /* Resources */ = {
@@ -379,20 +453,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5DBE252F06CC454CA659D7C2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
 		951D5A8816FCD2D3007C435C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,20 +465,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		CBE70B308E6243779C7F6E96 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -560,7 +606,6 @@
 		};
 		951D5A9D16FCD2D3007C435C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A0FA25832644B96B593E7E8 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
@@ -581,7 +626,6 @@
 		};
 		951D5A9E16FCD2D3007C435C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A0FA25832644B96B593E7E8 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Local-Drive-Buy/Local-Drive-Buy-Prefix.pch";
