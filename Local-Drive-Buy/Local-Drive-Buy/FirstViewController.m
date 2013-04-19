@@ -50,7 +50,6 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
                          @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
