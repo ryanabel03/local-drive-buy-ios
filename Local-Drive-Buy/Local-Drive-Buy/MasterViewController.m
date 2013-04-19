@@ -43,10 +43,21 @@
     [listingmapping addAttributeMappingsFromDictionary:@{
      @"title": @"title",
      @"description": @"description",
-     @"address": @"address",
      @"category": @"category",
      @"sub_category": @"subcategory"
      }];
+    RKObjectMapping * usermapping = [RKObjectMapping mappingForClass:[User class]];
+    [usermapping addAttributeMappingsFromDictionary:@{
+     @"address_one": @"addr1",
+     @"address_two": @"addr2",
+     @"business_name": @"name",
+     @"city": @"city",
+     @"state": @"state",
+     @"zip": @"zip",
+     @"email": @"email",
+     @"phone": @"phone"
+     }];
+    [listingmapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:usermapping]];
     RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectmanager addResponseDescriptor:responsedescriptor];
     NSDictionary * requestparams;

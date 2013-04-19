@@ -27,8 +27,15 @@
 {
     // Update the user interface for the detail item.
     self.title = self.detailItem.title;
-    self.descriptionlabel.attributedText = self.detailItem.description;
-    self.addresslabel.text = self.detailItem.address;
+    self.descriptionlabel.text = self.detailItem.description;
+    self.namelabel.text = self.detailItem.user.name;
+    self.addr1label.text = self.detailItem.user.addr1;
+    self.addr2label.text = self.detailItem.user.addr2;
+    self.citylabel.text = self.detailItem.user.city;
+    self.statelabel.text = self.detailItem.user.state;
+    self.ziplabel.text = self.detailItem.user.zip;
+    self.emaillabel.text = self.detailItem.user.email;
+    self.phonelabel.text = self.detailItem.user.phone;
     self.categorylabel.text = self.detailItem.category;
     self.sublabel.text = self.detailItem.subcategory;
     NSData * imagedata = [[NSData alloc] initWithContentsOfURL:self.detailItem.imageaddress];

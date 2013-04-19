@@ -53,23 +53,23 @@
     self.navigationController.navigationBar.hidden = YES;
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
-                         @"description": [[NSAttributedString alloc] initWithString:@"A Listing"],
+                         @"description": @"A Listing",
                          @"address": @"1 Campus Drive, Allendale, Michigan, 49401",
                          @"category": @"Goods",
                          @"subcategory": @"Arts & Crafts",
                          @"imageaddress": [[NSURL alloc] initWithString:@"https://si0.twimg.com/profile_images/1653774189/CQL_Logo_Small.jpg"]}]];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
-                         @"description": [[NSAttributedString alloc] initWithString:@"Another Listing"],
+                         @"description": @"Another Listing",
                          @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401",
                          @"category": @"Edibles",
                          @"subcategory": @"Farmer's Market"}]];
-    [self displayListings];
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
+    [self displayListings];
 }
 
 -(void) viewDidDisappear:(BOOL)animated

@@ -8,18 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "User.h"
 
 @interface Listing : NSObject <MKAnnotation>
 
 @property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSAttributedString * description;
+@property (nonatomic, strong) NSString * description;
 @property (nonatomic, strong) NSString * address;
 @property (nonatomic, strong) NSString * category;
 @property (nonatomic, strong) NSString * subcategory;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, strong) CLPlacemark * possiblelocation;
 @property (nonatomic, strong) NSURL * imageaddress;
 @property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) User * user;
 
 - (id)init_withdict: (NSDictionary *) info;
 

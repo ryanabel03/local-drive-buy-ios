@@ -15,7 +15,21 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionlabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *addresslabel;
+@property (weak, nonatomic) IBOutlet UILabel *namelabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *addr1label;
+
+@property (weak, nonatomic) IBOutlet UILabel *addr2label;
+
+@property (weak, nonatomic) IBOutlet UILabel *citylabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *statelabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *ziplabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *emaillabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *phonelabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *categorylabel;
 
