@@ -90,6 +90,22 @@
 	}
 }
 
+- (void)addAction:(void(^)())action tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon toSection:(NSInteger)section
+{
+    if (section < [self.menuItems count]) {
+        NSMutableDictionary* item = [[NSMutableDictionary alloc] init];
+        item[kSOViewTitle] = title;
+        item[kSOViewIcon] = icon;
+        // Note: The action is stored in the before block
+        item[kSOBeforeBlock] = [action copy];
+        item[kSOViewTag] = @(tag);
+        item[kSOItemIsAction] = @(YES);
+        [(self.menuItems)[section][kSOSection] addObject:item];
+    } else {
+        NSLog(@"AMSlideOutNavigation: section index out of bounds");
+    }
+}
+
 - (void)setBadgeValue:(NSString*)value forTag:(int)tag
 {
 	for (NSDictionary* section in self.menuItems) {
@@ -113,6 +129,11 @@
 - (void)addViewControllerToLastSection:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon beforeChange:(void(^)())before onCompletition:(void(^)())after
 {
 	[self addViewController:controller tagged:tag withTitle:title andIcon:icon toSection:([self.menuItems count]-1) beforeChange:before onCompletition:after];
+}
+
+- (void)addActionToLastSection:(void(^)())action tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon
+{
+    [self addAction:action tagged:tag withTitle:title andIcon:icon toSection:([self.menuItems count]-1)];
 }
 
 - (void)setContentViewController:(UIViewController *)controller
