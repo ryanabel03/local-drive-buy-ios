@@ -15,17 +15,103 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     
 	UIViewController* controller;
+    controller = [storyboard instantiateViewControllerWithIdentifier:@"firstScreen"];
 	
 	self.slideoutController = [AMSlideOutNavigationController slideOutNavigation];
 	
-	[self.slideoutController addSectionWithTitle:@""];
-	
-	controller = [storyboard instantiateViewControllerWithIdentifier:@"firstScreen"];
-	[self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"First View" andIcon:@""];
-	
-	//controller = [storyboard instantiateViewControllerWithIdentifier:@"secondSwipeScreen"];
-	//[self.slideoutController addViewControllerToLastSection:controller tagged:2 withTitle:@"Second View" andIcon:@""];
-	
+	[self.slideoutController addSectionWithTitle:@""];//All
+    
+    [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Map" andIcon:@""];
+    
+    [self.slideoutController addSectionWithTitle:@"Food"];//Edible
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Edible");
+	}
+											 tagged:3
+										  withTitle:@"Edible"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Brewery/Winery");
+	}
+											 tagged:4
+										  withTitle:@"Brewery/Winery"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Farmer's Market");
+	}
+											 tagged:5
+										  withTitle:@"Farmer's Market"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Restaurant");
+	}
+											 tagged:6
+										  withTitle:@"Restaurant"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Roadside Stand");
+	}
+											 tagged:7
+										  withTitle:@"Roadside Stand"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"U-Pick/Orchard");
+	}
+											 tagged:8
+										  withTitle:@"U-Pick/Orchard"
+											andIcon:@""];
+    
+    [self.slideoutController addSectionWithTitle:@"Stuff"];//Goods
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Goods");
+	}
+											 tagged:9
+										  withTitle:@"Goods"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Arts & Crafts");
+	}
+											 tagged:10
+										  withTitle:@"Arts & Crafts"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Clothing");
+	}
+											 tagged:11
+										  withTitle:@"Clothing"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Health & Fitness");
+	}
+											 tagged:12
+										  withTitle:@"Health & Fitness"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Furniture");
+	}
+											 tagged:13
+										  withTitle:@"Furniture"
+											andIcon:@""];
+    
+    [self.slideoutController addActionToLastSection:^{
+		NSLog(@"Other");
+	}
+											 tagged:14
+										  withTitle:@"Other"
+											andIcon:@""];
+    
+    
     [self.window setRootViewController:self.slideoutController];
     
     // Override point for customization after application launch.
