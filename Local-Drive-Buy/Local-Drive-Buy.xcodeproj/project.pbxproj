@@ -41,6 +41,7 @@
 		951D5AEB16FCECB9007C435C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */; };
 		951D5AED16FCECC7007C435C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEC16FCECC7007C435C /* Security.framework */; };
 		951D5AEF16FCECD6007C435C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */; };
+		954325DE172577BC00380F5A /* UserAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 954325DD172577BC00380F5A /* UserAnnotation.m */; };
 		956767DD170A0CA800387097 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DC170A0CA800387097 /* MasterViewController.m */; };
 		956767E0170A0F0D00387097 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DF170A0F0D00387097 /* DetailViewController.m */; };
 		9598CE6D170614060036A10E /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9598CE6C170614060036A10E /* Listing.m */; };
@@ -134,6 +135,9 @@
 		951D5AEA16FCECB9007C435C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		951D5AEC16FCECC7007C435C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		954325DC172577BC00380F5A /* UserAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAnnotation.h; sourceTree = "<group>"; };
+		954325DD172577BC00380F5A /* UserAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAnnotation.m; sourceTree = "<group>"; };
+		954325DF17257F9000380F5A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		956767DB170A0CA800387097 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		956767DC170A0CA800387097 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		956767DE170A0F0D00387097 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -243,9 +247,9 @@
 		951D5A5F16FCD2D2007C435C /* Local-Drive-Buy */ = {
 			isa = PBXGroup;
 			children = (
+				954325DF17257F9000380F5A /* Constants.h */,
 				951D5A6816FCD2D2007C435C /* AppDelegate.h */,
 				951D5A6916FCD2D2007C435C /* AppDelegate.m */,
-				951D5A7116FCD2D2007C435C /* MainStoryboard_iPhone.storyboard */,
 				956767DE170A0F0D00387097 /* DetailViewController.h */,
 				956767DF170A0F0D00387097 /* DetailViewController.m */,
 				956767DB170A0CA800387097 /* MasterViewController.h */,
@@ -254,11 +258,14 @@
 				9598CE6C170614060036A10E /* Listing.m */,
 				95A916FB1721D13800CADF8D /* User.h */,
 				95A916FC1721D13800CADF8D /* User.m */,
-				951D5A7416FCD2D2007C435C /* MainStoryboard_iPad.storyboard */,
+				954325DC172577BC00380F5A /* UserAnnotation.h */,
+				954325DD172577BC00380F5A /* UserAnnotation.m */,
 				951D5A7716FCD2D2007C435C /* FirstViewController.h */,
 				951D5A7816FCD2D2007C435C /* FirstViewController.m */,
 				9512574D171C922A00366C98 /* SearchViewController.h */,
 				9512574E171C922A00366C98 /* SearchViewController.m */,
+				951D5A7116FCD2D2007C435C /* MainStoryboard_iPhone.storyboard */,
+				951D5A7416FCD2D2007C435C /* MainStoryboard_iPad.storyboard */,
 				95040D01171DDF7400794F1B /* ldb_logo.png */,
 				95040D03171DE0DE00794F1B /* ldb_logo@2x.png */,
 				951D5A6016FCD2D2007C435C /* Supporting Files */,
@@ -473,6 +480,7 @@
 				5B53027C17149E1A00161052 /* AMSlideTableHeader.m in Sources */,
 				9512574F171C922A00366C98 /* SearchViewController.m in Sources */,
 				95A916FD1721D13800CADF8D /* User.m in Sources */,
+				954325DE172577BC00380F5A /* UserAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

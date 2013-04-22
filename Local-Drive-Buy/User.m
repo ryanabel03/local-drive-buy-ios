@@ -7,7 +7,7 @@
 //
 
 #import "User.h"
-#import "Listing.h"
+#import "Constants.h"
 
 @implementation User
 
@@ -72,23 +72,10 @@
 {
     if (!_image)
     {
-        _image = [[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:self.imageaddress]];
+        NSURL * imageurl = [[NSURL alloc] initWithString:[WEPAPPPATH stringByAppendingString:self.imageaddress]];
+        _image = [[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:imageurl]];
     }
-    return  _image;
-}
-
--(void) addlisting:(id)nl
-{
-    Listing * newlisting = nl;
-    [self.listings addObject:newlisting];
-    if ([newlisting.category isEqualToString:@"Edible"])
-    {
-        self.hasedible = TRUE;
-    }
-    else if ([newlisting.category isEqualToString:@"Goods"])
-    {
-        self.hasgoods = TRUE;
-    }
+    return _image;
 }
 
 @end

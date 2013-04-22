@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Listing.h"
+#import "DetailViewController.h"
 
 @interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 

@@ -18,14 +18,9 @@
 @property (strong, nonatomic) NSString * zip;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSString * name;
-@property (strong, nonatomic) NSURL * imageaddress;
+@property (strong, nonatomic) NSString * imageaddress;
 @property (strong, nonatomic) UIImage * image;
 @property (strong, nonatomic) NSString * email;
 @property (strong, nonatomic) NSString * phone;
-@property (strong, nonatomic) NSMutableArray * listings;
-@property (nonatomic) BOOL hasedible;
-@property (nonatomic) BOOL hasgoods;
-
-- (void) addlisting:(id) newlisting;
 
 @end

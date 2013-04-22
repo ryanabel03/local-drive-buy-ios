@@ -7,10 +7,11 @@
 //
 
 #import "MasterViewController.h"
+#import "Constants.h"
 
 @interface MasterViewController ()
 {
-    NSMutableArray *_objects;
+    NSArray *_objects;
 }
 
 @end
@@ -35,7 +36,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSURL * baseurl = [NSURL URLWithString:@"http://local-drive-buy.herokuapp.com/"];
+    NSURL * baseurl = [NSURL URLWithString:[WEPAPPPATH stringByAppendingString:@"/"]];
     AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
@@ -55,24 +56,31 @@
      @"state": @"state",
      @"zip": @"zip",
      @"email": @"email",
-     @"phone": @"phone"
+     @"phone": @"phone",
+     @"pic_url": @"imageaddress"
      }];
-    [listingmapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user" toKeyPath:@"user" withMapping:usermapping]];
+    [listingmapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_info" toKeyPath:@"user" withMapping:usermapping]];
     RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectmanager addResponseDescriptor:responsedescriptor];
-    NSDictionary * requestparams;
-    if ([self.title isEqualToString:@"All"])
-    {
-        requestparams = @{};
-    }
-    else
-    {
-        requestparams = @{@"category": self.title};
-    }
-    [objectmanager getObjectsAtPath:@"http://local-drive-buy.herokuapp.com/api/listings" parameters:requestparams success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
+    [objectmanager getObjectsAtPath:[WEPAPPPATH stringByAppendingString:@"/api.listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
      {
+         NSMutableArray * allResults;
          NSArray * result = [mappingresult array];
-         _objects = [result mutableCopy];
+         allResults = [result mutableCopy];
+         if ([self.title isEqualToString:@"Edible"])
+         {
+             NSPredicate *ediblepredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Edibles'"];
+             _objects = [allResults filteredArrayUsingPredicate:ediblepredicate];
+         }
+         else if ([self.title isEqualToString:@"Goods"])
+         {
+             NSPredicate *goodspredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Goods'"];
+             _objects = [allResults filteredArrayUsingPredicate:goodspredicate];
+         }
+         else
+         {
+             _objects = allResults;
+         }
          [self.tableView reloadData];
      }
                             failure:^(RKObjectRequestOperation * operation, NSError * error)

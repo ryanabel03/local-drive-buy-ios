@@ -7,7 +7,6 @@
 //
 
 #import "SearchViewController.h"
-#import "Listing.h"
 
 @interface SearchViewController ()
 

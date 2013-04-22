@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DetailViewController.h"
 #import <RestKit/RestKit.h>
+#import "DetailViewController.h"
 
 @interface MasterViewController : UITableViewController <RKMappingOperationDelegate>
 

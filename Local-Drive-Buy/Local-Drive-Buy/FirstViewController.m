@@ -7,9 +7,7 @@
 //
 
 #import "FirstViewController.h"
-#import "DetailViewController.h"
-
-#define MAPZOOM 25000
+#import "Constants.h"
 
 @interface FirstViewController ()
 
@@ -51,6 +49,8 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    //AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    //appdelegate.slideoutController.contentController.navigationBarHidden = NO;
     _objects = [[NSMutableArray alloc] init];
     [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
                          @"description": @"A Listing",
@@ -70,6 +70,13 @@
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
     [self displayListings];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    //AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    //appdelegate.slideoutController.contentController.navigationBarHidden = YES;
 }
 
 -(void) viewDidDisappear:(BOOL)animated

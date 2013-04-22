@@ -38,9 +38,7 @@
     self.phonelabel.text = self.detailItem.user.phone;
     self.categorylabel.text = self.detailItem.category;
     self.sublabel.text = self.detailItem.subcategory;
-    NSData * imagedata = [[NSData alloc] initWithContentsOfURL:self.detailItem.imageaddress];
-    UIImage * image = [[UIImage alloc] initWithData:imagedata];
-    self.imagedisplay.image = image;
+    self.imagedisplay.image = self.detailItem.user.image;
 }
 
 - (void)viewDidLoad
