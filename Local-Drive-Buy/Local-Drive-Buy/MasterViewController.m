@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-#import "Constants.h"
 
 @interface MasterViewController ()
 {
@@ -36,7 +35,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSURL * baseurl = [NSURL URLWithString:[WEPAPPPATH stringByAppendingString:@"/"]];
+    NSURL * baseurl = [NSURL URLWithString:[WEBAPPPATH stringByAppendingString:@"/"]];
     AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
@@ -62,7 +61,7 @@
     [listingmapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_info" toKeyPath:@"user" withMapping:usermapping]];
     RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     [objectmanager addResponseDescriptor:responsedescriptor];
-    [objectmanager getObjectsAtPath:[WEPAPPPATH stringByAppendingString:@"/api.listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
+    [objectmanager getObjectsAtPath:[WEBAPPPATH stringByAppendingString:@"/api/listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
      {
          NSMutableArray * allResults;
          NSArray * result = [mappingresult array];

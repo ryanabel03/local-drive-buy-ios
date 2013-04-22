@@ -14,7 +14,8 @@
 {
     self = [super init];
     
-    _name = listing.user.name;
+    _title = listing.user.name;
+    _image = listing.user.image;
     [self addlisting:listing];
     
     return self;
@@ -31,6 +32,28 @@
     {
         self.hasgoods = TRUE;
     }
+}
+
+- (CLLocationCoordinate2D) coordinate
+{
+    if (!CLLocationCoordinate2DIsValid(_coordinate))
+    {
+        Listing * l = self.listings[0];
+        if (l.user.addr1 != @"")
+        {
+            NSString * address = [l.user.addr1 stringByAppendingString:[@" " stringByAppendingString:[l.user.addr2 stringByAppendingString:[@", " stringByAppendingString:[l.user.city stringByAppendingString:[@", " stringByAppendingString:[l.user.state stringByAppendingString:[@", " stringByAppendingString:l.user.zip]]]]]]]];
+            CLGeocoder * geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:address completionHandler:^(NSArray * placemarks, NSError * error)
+             {
+                 if (placemarks[0])
+                 {
+                     CLPlacemark * possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
+                     _coordinate = CLLocationCoordinate2DMake(possiblelocation.location.coordinate.latitude, possiblelocation.location.coordinate.longitude);
+                 }
+             }];
+        }
+    }
+    return _coordinate;
 }
 
 @end

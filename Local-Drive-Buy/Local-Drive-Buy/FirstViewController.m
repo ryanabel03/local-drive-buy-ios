@@ -7,7 +7,6 @@
 //
 
 #import "FirstViewController.h"
-#import "Constants.h"
 
 @interface FirstViewController ()
 
@@ -33,15 +32,21 @@
 
 -(void)displayListings
 {
+    NSMutableDictionary * users = [[NSMutableDictionary alloc] init];
     for (Listing * listing in _objects)
     {
-        if (CLLocationCoordinate2DIsValid(listing.coordinate))
-        {
-            if (pow((listing.coordinate.latitude - self.mapview.userLocation.coordinate.latitude), 2) + pow((listing.coordinate.longitude - self.mapview.userLocation.coordinate.longitude), 2) < MAPZOOM)
-            {
-                [self.mapview addAnnotation:listing];
-            }
-        }
+        //if(!users[listing.user.name])
+        //{
+        //    [users addEntriesFromDictionary:@{listing.user.name: [[UserAnnotation alloc] init_withlisting:listing]}];
+        //}
+        //else
+        //{
+        //    [users[listing.user.name] addlisting:listing];
+        //}
+    }
+    for (UserAnnotation * ua in users)
+    {
+        [self.mapview addAnnotation:ua];
     }
 }
 
@@ -49,20 +54,59 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-    //AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
-    //appdelegate.slideoutController.contentController.navigationBarHidden = NO;
-    _objects = [[NSMutableArray alloc] init];
-    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"This",
-                         @"description": @"A Listing",
-                         @"address": @"1 Campus Drive, Allendale, Michigan, 49401",
-                         @"category": @"Goods",
-                         @"subcategory": @"Arts & Crafts",
-                         @"imageaddress": [[NSURL alloc] initWithString:@"https://si0.twimg.com/profile_images/1653774189/CQL_Logo_Small.jpg"]}]];
-    [_objects addObject:[[Listing alloc] init_withdict:@{@"title": @"That",
-                         @"description": @"Another Listing",
-                         @"address": @"6370 Lake Michigan Dr, Allendale, Michigan, 49401",
-                         @"category": @"Edibles",
-                         @"subcategory": @"Farmer's Market"}]];
+    AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    appdelegate.slideoutController.contentController.navigationBarHidden = NO;
+    NSURL * baseurl = [NSURL URLWithString:[WEBAPPPATH stringByAppendingString:@"/"]];
+    AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    RKObjectMapping * listingmapping = [RKObjectMapping mappingForClass:[Listing class]];
+    [listingmapping addAttributeMappingsFromDictionary:@{
+     @"title": @"title",
+     @"description": @"description",
+     @"category": @"category",
+     @"sub_category": @"subcategory"
+     }];
+    RKObjectMapping * usermapping = [RKObjectMapping mappingForClass:[User class]];
+    [usermapping addAttributeMappingsFromDictionary:@{
+     @"address_one": @"addr1",
+     @"address_two": @"addr2",
+     @"business_name": @"name",
+     @"city": @"city",
+     @"state": @"state",
+     @"zip": @"zip",
+     @"email": @"email",
+     @"phone": @"phone",
+     @"pic_url": @"imageaddress"
+     }];
+    [listingmapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_info" toKeyPath:@"user" withMapping:usermapping]];
+    RKResponseDescriptor * responsedescriptor = [RKResponseDescriptor responseDescriptorWithMapping:listingmapping pathPattern:nil keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectmanager addResponseDescriptor:responsedescriptor];
+    [objectmanager getObjectsAtPath:[WEBAPPPATH stringByAppendingString:@"/api/listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
+     {
+         NSMutableArray * allResults;
+         NSArray * result = [mappingresult array];
+         allResults = [result mutableCopy];
+         if ([self.title isEqualToString:@"Edible"])
+         {
+             NSPredicate *ediblepredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Edibles'"];
+             _objects = [allResults filteredArrayUsingPredicate:ediblepredicate];
+         }
+         else if ([self.title isEqualToString:@"Goods"])
+         {
+             NSPredicate *goodspredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Goods'"];
+             _objects = [allResults filteredArrayUsingPredicate:goodspredicate];
+         }
+         else
+         {
+             _objects = allResults;
+         }
+         [self displayListings];
+     }
+                            failure:^(RKObjectRequestOperation * operation, NSError * error)
+     {
+         NSLog(@"failure: operation: %@ \n\nerror: %@", operation, error);
+     }];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -75,8 +119,8 @@
 -(void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    //AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
-    //appdelegate.slideoutController.contentController.navigationBarHidden = YES;
+    AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    appdelegate.slideoutController.contentController.navigationBarHidden = YES;
 }
 
 -(void) viewDidDisappear:(BOOL)animated
@@ -87,21 +131,21 @@
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[Listing class]])
+    if ([annotation isKindOfClass:[UserAnnotation class]])
     {
         MKAnnotationView * aview = [mapView dequeueReusableAnnotationViewWithIdentifier:@"annotation"];
         if (!aview)
         {
             aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         }
-        Listing * l = annotation;
+        UserAnnotation * u = annotation;
         aview.annotation = annotation;
         aview.canShowCallout = YES;
         aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        if (l.image)
+        if (u.image)
         {
             UIImageView * left = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-            left.image = l.image;
+            left.image = u.image;
             aview.leftCalloutAccessoryView = left;
         }
         else

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "Constants.h"
 
 @interface User : NSObject <MKAnnotation>
 
@@ -16,7 +17,6 @@
 @property (strong, nonatomic) NSString * city;
 @property (strong, nonatomic) NSString * state;
 @property (strong, nonatomic) NSString * zip;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSString * imageaddress;
 @property (strong, nonatomic) UIImage * image;

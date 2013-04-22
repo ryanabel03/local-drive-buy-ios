@@ -42,6 +42,7 @@
 		951D5AED16FCECC7007C435C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEC16FCECC7007C435C /* Security.framework */; };
 		951D5AEF16FCECD6007C435C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */; };
 		954325DE172577BC00380F5A /* UserAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 954325DD172577BC00380F5A /* UserAnnotation.m */; };
+		954FE1D617259AC600C88BD3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FE1D517259AC600C88BD3 /* Constants.m */; };
 		956767DD170A0CA800387097 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DC170A0CA800387097 /* MasterViewController.m */; };
 		956767E0170A0F0D00387097 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 956767DF170A0F0D00387097 /* DetailViewController.m */; };
 		9598CE6D170614060036A10E /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9598CE6C170614060036A10E /* Listing.m */; };
@@ -137,7 +138,8 @@
 		951D5AEE16FCECD6007C435C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		954325DC172577BC00380F5A /* UserAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAnnotation.h; sourceTree = "<group>"; };
 		954325DD172577BC00380F5A /* UserAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAnnotation.m; sourceTree = "<group>"; };
-		954325DF17257F9000380F5A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		954FE1D417259AC600C88BD3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
+		954FE1D517259AC600C88BD3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
 		956767DB170A0CA800387097 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		956767DC170A0CA800387097 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		956767DE170A0F0D00387097 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -247,9 +249,10 @@
 		951D5A5F16FCD2D2007C435C /* Local-Drive-Buy */ = {
 			isa = PBXGroup;
 			children = (
-				954325DF17257F9000380F5A /* Constants.h */,
 				951D5A6816FCD2D2007C435C /* AppDelegate.h */,
 				951D5A6916FCD2D2007C435C /* AppDelegate.m */,
+				954FE1D417259AC600C88BD3 /* Constants.h */,
+				954FE1D517259AC600C88BD3 /* Constants.m */,
 				956767DE170A0F0D00387097 /* DetailViewController.h */,
 				956767DF170A0F0D00387097 /* DetailViewController.m */,
 				956767DB170A0CA800387097 /* MasterViewController.h */,
@@ -481,6 +484,7 @@
 				9512574F171C922A00366C98 /* SearchViewController.m in Sources */,
 				95A916FD1721D13800CADF8D /* User.m in Sources */,
 				954325DE172577BC00380F5A /* UserAnnotation.m in Sources */,
+				954FE1D617259AC600C88BD3 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

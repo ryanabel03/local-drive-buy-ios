@@ -7,30 +7,8 @@
 //
 
 #import "User.h"
-#import "Constants.h"
 
 @implementation User
-
-- (CLLocationCoordinate2D) coordinate
-{
-    if (!CLLocationCoordinate2DIsValid(_coordinate))
-    {
-        if (self.addr1 != @"")
-        {
-            NSString * address = [self.addr1 stringByAppendingString:[@" " stringByAppendingString:[self.addr2 stringByAppendingString:[@", " stringByAppendingString:[self.city stringByAppendingString:[@", " stringByAppendingString:[self.state stringByAppendingString:[@", " stringByAppendingString:self.zip]]]]]]]];
-            CLGeocoder * geocoder = [[CLGeocoder alloc] init];
-            [geocoder geocodeAddressString:address completionHandler:^(NSArray * placemarks, NSError * error)
-             {
-                 if (placemarks[0])
-                 {
-                     CLPlacemark * possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
-                     _coordinate = CLLocationCoordinate2DMake(possiblelocation.location.coordinate.latitude, possiblelocation.location.coordinate.longitude);
-                 }
-             }];
-        }
-    }
-    return _coordinate;
-}
 
 - (NSString *) addr1
 {
@@ -72,8 +50,9 @@
 {
     if (!_image)
     {
-        NSURL * imageurl = [[NSURL alloc] initWithString:[WEPAPPPATH stringByAppendingString:self.imageaddress]];
+        NSURL * imageurl = [[NSURL alloc] initWithString:[WEBAPPPATH stringByAppendingString:self.imageaddress]];
         _image = [[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:imageurl]];
+        NSLog(@"%@", imageurl);
     }
     return _image;
 }

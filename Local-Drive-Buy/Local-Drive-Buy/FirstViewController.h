@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 #import "DetailViewController.h"
+#import "AppDelegate.h"
+#import "UserAnnotation.h"
 
 @interface FirstViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
@@ -17,7 +20,7 @@
 
 @property (strong, nonatomic) MKAnnotationView *annotationview;
 
-@property (strong, nonatomic) NSMutableArray * objects;
+@property (strong, nonatomic) NSArray * objects;
 
 @property (strong, nonatomic) NSArray * searchresults;
 
