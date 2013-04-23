@@ -33,6 +33,7 @@
     {
         self.hasgoods = TRUE;
     }
+    //asdf
 }
 
 - (CLLocationCoordinate2D) coordinate

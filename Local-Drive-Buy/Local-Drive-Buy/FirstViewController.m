@@ -45,9 +45,13 @@
             [users[listing.user.name] addlisting:listing];
         }
     }
+    
     for (NSString * key in users)
     {
-        [self.mapview addAnnotation:users[key]];
+        //UserAnnotation * ua = users[key];
+        //if (ua.hasedible == appDelegate.checkEdible)
+           [self.mapview addAnnotation:users[key]];
+        //else if (ua.hasgoods == appDelegate.checkGoods)
     }
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(appDelegate.pinSelector);

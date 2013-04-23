@@ -357,7 +357,7 @@
 	if ([dict[kSOItemIsAction] boolValue]) {
 		// If an items only contains an action (saved as a beofre handler), don't change view controller
 		// just exit
-		[self hideSideMenu];
+		//[self hideSideMenu];
 		return;
 	}
 	
@@ -444,7 +444,7 @@
 - (void)handleTap:(UITapGestureRecognizer *)gestureRecognizer
 {
     // A single tap hides the slide menu
-    [self hideSideMenu];
+    //[self hideSideMenu];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
