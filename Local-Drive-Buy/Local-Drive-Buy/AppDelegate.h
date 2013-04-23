@@ -13,8 +13,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-//********
 @property (strong, nonatomic) AMSlideOutNavigationController*	slideoutController;
-//********
+
+@property (strong, nonatomic) NSMutableString *pinSelector;
 
 @end

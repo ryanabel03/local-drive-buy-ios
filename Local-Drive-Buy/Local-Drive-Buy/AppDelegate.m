@@ -10,13 +10,14 @@
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     
 	UIViewController* controller;
     controller = [storyboard instantiateViewControllerWithIdentifier:@"firstScreen"];
-	
+    
 	self.slideoutController = [AMSlideOutNavigationController slideOutNavigation];
 	
 	[self.slideoutController addSectionWithTitle:@""];//All
@@ -25,7 +26,7 @@
     
     [self.slideoutController addSectionWithTitle:@"Food"];//Edible
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Edible");
+		self.pinSelector = (NSMutableString *)@"Edible";
 	}
 											 tagged:3
 										  withTitle:@"Edible"

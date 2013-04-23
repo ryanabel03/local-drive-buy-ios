@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
 
@@ -48,6 +49,8 @@
     {
         [self.mapview addAnnotation:ua];
     }
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(appDelegate.pinSelector);
 }
 
 -(void) viewWillAppear:(BOOL)animated
