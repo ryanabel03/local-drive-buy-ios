@@ -35,18 +35,18 @@
     NSMutableDictionary * users = [[NSMutableDictionary alloc] init];
     for (Listing * listing in _objects)
     {
-        //if(!users[listing.user.name])
-        //{
-        //    [users addEntriesFromDictionary:@{listing.user.name: [[UserAnnotation alloc] init_withlisting:listing]}];
-        //}
-        //else
-        //{
-        //    [users[listing.user.name] addlisting:listing];
-        //}
+        if(![users objectForKey:listing.user.name])
+        {
+            [users setObject:[[UserAnnotation alloc] init_withlisting:listing] forKey:listing.user.name];
+        }
+        else
+        {
+            [users[listing.user.name] addlisting:listing];
+        }
     }
-    for (UserAnnotation * ua in users)
+    for (NSString * key in users)
     {
-        [self.mapview addAnnotation:ua];
+        [self.mapview addAnnotation:users[key]];
     }
 }
 
@@ -84,23 +84,8 @@
     [objectmanager addResponseDescriptor:responsedescriptor];
     [objectmanager getObjectsAtPath:[WEBAPPPATH stringByAppendingString:@"/api/listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
      {
-         NSMutableArray * allResults;
          NSArray * result = [mappingresult array];
-         allResults = [result mutableCopy];
-         if ([self.title isEqualToString:@"Edible"])
-         {
-             NSPredicate *ediblepredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Edibles'"];
-             _objects = [allResults filteredArrayUsingPredicate:ediblepredicate];
-         }
-         else if ([self.title isEqualToString:@"Goods"])
-         {
-             NSPredicate *goodspredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Goods'"];
-             _objects = [allResults filteredArrayUsingPredicate:goodspredicate];
-         }
-         else
-         {
-             _objects = allResults;
-         }
+         self.objects = [result mutableCopy];
          [self displayListings];
      }
                             failure:^(RKObjectRequestOperation * operation, NSError * error)
@@ -139,6 +124,7 @@
             aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         }
         UserAnnotation * u = annotation;
+        NSLog(@"%f", u.coordinate.latitude);
         aview.annotation = annotation;
         aview.canShowCallout = YES;
         aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -172,8 +158,9 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
-        Listing * object = sender;
-        [[segue destinationViewController] setDetailItem:object];
+        UserAnnotation * object = sender;
+        [[segue destinationViewController] setTitle:object.title];
+        [[segue destinationViewController] setObjects:[object.listings mutableCopy]];
     }
     else if ([[segue identifier] isEqualToString:@"search"])
     {
