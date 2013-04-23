@@ -33,6 +33,14 @@
 
 -(void)displayListings
 {
+    id ul = [self.mapview userLocation];
+    NSMutableArray * pins = [[NSMutableArray alloc] initWithArray:[self.mapview annotations]];
+    if (ul)
+    {
+        [pins removeObject:ul];
+    }
+    [self.mapview removeAnnotations:pins];
+    
     NSMutableDictionary * users = [[NSMutableDictionary alloc] init];
     for (Listing * listing in _objects)
     {
