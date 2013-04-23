@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		5B7BF7201704C81F001685C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF71F1704C81E001685C4 /* QuartzCore.framework */; };
 		5B7BF7221704C828001685C4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7BF7211704C828001685C4 /* libxml2.dylib */; };
-		5BEB23EA1725ABE7007FD952 /* AMSlideOutGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23DF1725ABE7007FD952 /* AMSlideOutGlobals.m */; };
-		5BEB23EB1725ABE7007FD952 /* AMSlideOutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E11725ABE7007FD952 /* AMSlideOutNavigationController.m */; };
-		5BEB23EC1725ABE7007FD952 /* AMSlideTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E31725ABE7007FD952 /* AMSlideTableCell.m */; };
-		5BEB23ED1725ABE7007FD952 /* AMSlideTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E51725ABE7007FD952 /* AMSlideTableHeader.m */; };
-		5BEB23EE1725ABE7007FD952 /* AMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E71725ABE7007FD952 /* AMTableView.m */; };
 		5BEB23EF1725ABE7007FD952 /* iconSlide.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB23E81725ABE7007FD952 /* iconSlide.png */; };
 		5BEB23F01725ABE7007FD952 /* iconSlide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BEB23E91725ABE7007FD952 /* iconSlide@2x.png */; };
 		95040D02171DDF7400794F1B /* ldb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 95040D01171DDF7400794F1B /* ldb_logo.png */; };
@@ -51,6 +46,11 @@
 		95A9168A1721C83000CADF8D /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A916831721C81900CADF8D /* libRestKit.a */; };
 		95A916FD1721D13800CADF8D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A916FC1721D13800CADF8D /* User.m */; };
 		95B0AAAD170E20F400859874 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B0AAAC170E20F400859874 /* GLKit.framework */; };
+		A7D7FB3E1726E5CA00630892 /* AMSlideOutGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23DF1725ABE7007FD952 /* AMSlideOutGlobals.m */; };
+		A7D7FB3F1726E5CA00630892 /* AMSlideOutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E11725ABE7007FD952 /* AMSlideOutNavigationController.m */; };
+		A7D7FB401726E5CA00630892 /* AMSlideTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E31725ABE7007FD952 /* AMSlideTableCell.m */; };
+		A7D7FB411726E5CB00630892 /* AMSlideTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E51725ABE7007FD952 /* AMSlideTableHeader.m */; };
+		A7D7FB421726E5CB00630892 /* AMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB23E71725ABE7007FD952 /* AMTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,8 +208,7 @@
 				5BEB23E81725ABE7007FD952 /* iconSlide.png */,
 				5BEB23E91725ABE7007FD952 /* iconSlide@2x.png */,
 			);
-			name = AMSlideOut;
-			path = ../../SlideOutNavigation/AMSlideOut;
+			path = AMSlideOut;
 			sourceTree = "<group>";
 		};
 		951D5A4A16FCD2D1007C435C = {
@@ -481,6 +480,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D7FB3E1726E5CA00630892 /* AMSlideOutGlobals.m in Sources */,
+				A7D7FB3F1726E5CA00630892 /* AMSlideOutNavigationController.m in Sources */,
+				A7D7FB401726E5CA00630892 /* AMSlideTableCell.m in Sources */,
+				A7D7FB411726E5CB00630892 /* AMSlideTableHeader.m in Sources */,
+				A7D7FB421726E5CB00630892 /* AMTableView.m in Sources */,
 				951D5A6616FCD2D2007C435C /* main.m in Sources */,
 				951D5A6A16FCD2D2007C435C /* AppDelegate.m in Sources */,
 				951D5A7916FCD2D2007C435C /* FirstViewController.m in Sources */,
@@ -491,11 +495,6 @@
 				95A916FD1721D13800CADF8D /* User.m in Sources */,
 				954325DE172577BC00380F5A /* UserAnnotation.m in Sources */,
 				954FE1D617259AC600C88BD3 /* Constants.m in Sources */,
-				5BEB23EA1725ABE7007FD952 /* AMSlideOutGlobals.m in Sources */,
-				5BEB23EB1725ABE7007FD952 /* AMSlideOutNavigationController.m in Sources */,
-				5BEB23EC1725ABE7007FD952 /* AMSlideTableCell.m in Sources */,
-				5BEB23ED1725ABE7007FD952 /* AMSlideTableHeader.m in Sources */,
-				5BEB23EE1725ABE7007FD952 /* AMTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

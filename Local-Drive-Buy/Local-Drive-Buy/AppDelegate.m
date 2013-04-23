@@ -24,7 +24,6 @@
     [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Map" andIcon:@""];
     
     [self.slideoutController addSectionWithTitle:@"Food"];//Edible
-    
     [self.slideoutController addActionToLastSection:^{
 		NSLog(@"Edible");
 	}

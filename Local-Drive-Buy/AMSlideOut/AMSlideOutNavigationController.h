@@ -1,6 +1,6 @@
 //
 //  AMSlideOutNavigationController.h
-//  SlideOut
+//  AMSlideOutNavigationController
 //
 //  Created by Andrea on 12/08/12.
 //  Copyright (c) 2012 Andrea Mazzini. All rights reserved.
@@ -27,6 +27,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "AMSlideOutGlobals.h"
+#import "AMTableView.h"
 
 typedef void (^AMSlideOutBeforeHandler)(void);
 typedef void (^AMSlideOutCompletionHandler)(void);
@@ -42,18 +43,24 @@ typedef void (^AMSlideOutCompletionHandler)(void);
 
 @property (strong, nonatomic)	NSMutableArray*			menuItems;
 @property (strong, nonatomic)	UINavigationController*	contentController;
-@property (weak, nonatomic)		UIView*					contentView;
-@property (strong, nonatomic)	UITableView*			tableView;
+@property (strong, nonatomic)	AMTableView*			tableView;
 
 + (id)slideOutNavigationWithMenuItems:(NSArray*)items;
 + (id)slideOutNavigation;
 - (id)initWithMenuItems:(NSArray*)items;
 
+- (void)setSlideoutOptions:(NSDictionary *)options;
+
 - (void)addViewControllerToLastSection:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon;
 - (void)addViewControllerToLastSection:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon beforeChange:(void(^)())before onCompletition:(void(^)())after;
+- (void)addActionToLastSection:(void(^)())action tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon;
 
 - (void)addViewController:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon toSection:(NSInteger)section;
 - (void)addViewController:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon toSection:(NSInteger)section beforeChange:(void(^)())before onCompletition:(void(^)())after;
+- (void)addAction:(void(^)())action tagged:(int)tag withTitle:(NSString*)title andIcon:(NSString*)icon toSection:(NSInteger)section;
+
+- (void)switchToControllerTagged:(int)tag andPerformSelector:(SEL)selector withObject:(id)obj;
+
 - (void)addSectionWithTitle:(NSString*)title;
 - (void)setBadgeValue:(NSString*)value forTag:(int)tag;
 

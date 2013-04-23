@@ -33,6 +33,41 @@
 #define kSOBeforeBlock	@"before"
 #define kSOAfterBlock	@"after"
 #define kSOSectionTitle	@"title"
+#define kSOItemIsAction	@"isAction"
+
+
+FOUNDATION_EXPORT NSString *const AMOptionsEnableGesture;
+FOUNDATION_EXPORT NSString *const AMOptionsEnableShadow;
+FOUNDATION_EXPORT NSString *const AMOptionsSetButtonDone;
+FOUNDATION_EXPORT NSString *const AMOptionsUseBorderedButton;
+FOUNDATION_EXPORT NSString *const AMOptionsButtonIcon;
+FOUNDATION_EXPORT NSString *const AMOptionsTableBackground;
+FOUNDATION_EXPORT NSString *const AMOptionsUseDefaultTitles;
+
+FOUNDATION_EXPORT NSString *const AMOptionsSlideValue;
+FOUNDATION_EXPORT NSString *const AMOptionsBackground;
+FOUNDATION_EXPORT NSString *const AMOptionsSelectionBackground;
+
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderFont;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderFontColor;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderShadowColor;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderPadding;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderGradientUp;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderGradientDown;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderSeparatorUpper;
+FOUNDATION_EXPORT NSString *const AMOptionsHeaderSeparatorLower;
+
+FOUNDATION_EXPORT NSString *const AMOptionsCellFont;
+FOUNDATION_EXPORT NSString *const AMOptionsCellFontColor;
+FOUNDATION_EXPORT NSString *const AMOptionsCellBadgeFont;
+FOUNDATION_EXPORT NSString *const AMOptionsCellBackground;
+FOUNDATION_EXPORT NSString *const AMOptionsCellSeparatorUpper;
+FOUNDATION_EXPORT NSString *const AMOptionsCellSeparatorLower;
+FOUNDATION_EXPORT NSString *const AMOptionsCellShadowColor;
+
+FOUNDATION_EXPORT NSString *const AMOptionsImagePadding;
+FOUNDATION_EXPORT NSString *const AMOptionsTextPadding;
+FOUNDATION_EXPORT NSString *const AMOptionsBadgePosition;
 
 // SlideOut Controller
 #define kSlideValue				260
