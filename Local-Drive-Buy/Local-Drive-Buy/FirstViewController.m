@@ -146,6 +146,7 @@
         if (u.image)
         {
             UIImageView * left = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+            left.contentMode = UIViewContentModeScaleAspectFit;
             left.image = u.image;
             aview.leftCalloutAccessoryView = left;
         }

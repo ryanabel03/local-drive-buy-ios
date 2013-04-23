@@ -63,22 +63,33 @@
     [objectmanager addResponseDescriptor:responsedescriptor];
     [objectmanager getObjectsAtPath:[WEBAPPPATH stringByAppendingString:@"/api/listings"] parameters:@{} success:^(RKObjectRequestOperation * operation, RKMappingResult * mappingresult)
      {
-         NSMutableArray * allResults;
          NSArray * result = [mappingresult array];
-         allResults = [result mutableCopy];
+         self.allResults = [result mutableCopy];
          if ([self.title isEqualToString:@"Edible"])
          {
-             NSPredicate *ediblepredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Edibles'"];
-             _objects = [allResults filteredArrayUsingPredicate:ediblepredicate];
+             NSPredicate *ediblepredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[c] 'Edibles'"];
+             _objects = [self.allResults filteredArrayUsingPredicate:ediblepredicate];
          }
          else if ([self.title isEqualToString:@"Goods"])
          {
-             NSPredicate *goodspredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[cd] 'Goods'"];
-             _objects = [allResults filteredArrayUsingPredicate:goodspredicate];
+             NSPredicate *goodspredicate = [NSPredicate predicateWithFormat:@"SELF.category LIKE[c] 'Goods'"];
+             _objects = [self.allResults filteredArrayUsingPredicate:goodspredicate];
+         }
+         else if ([self.title isEqualToString:@"Favorites"])
+         {
+             NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+             NSMutableArray * favorites = [defaults objectForKey:@"favorites"];
+             if (!favorites)
+             {
+                 favorites = [[NSMutableArray alloc] init];
+             }
+             NSPredicate *favoritespredicate = [NSPredicate predicateWithFormat:@"SELF.user.name IN %@", favorites];
+             _objects = [self.allResults filteredArrayUsingPredicate:favoritespredicate];
+             [self.tableView reloadData];
          }
          else
          {
-             _objects = allResults;
+             _objects = self.allResults;
          }
          [self.tableView reloadData];
      }
@@ -184,6 +195,24 @@
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         Listing * object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([self.title isEqualToString:@"Favorites"])
+    {
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray * favorites = [defaults objectForKey:@"favorites"];
+        if (!favorites)
+        {
+            favorites = [[NSMutableArray alloc] init];
+        }
+        NSPredicate *favoritespredicate = [NSPredicate predicateWithFormat:@"SELF.user.name IN %@", favorites];
+        _objects = [self.allResults filteredArrayUsingPredicate:favoritespredicate];
+        [self.tableView reloadData];
     }
 }
 

@@ -38,7 +38,16 @@
     self.phonelabel.text = self.detailItem.user.phone;
     self.categorylabel.text = self.detailItem.category;
     self.sublabel.text = self.detailItem.subcategory;
+    self.imagedisplay.contentMode = UIViewContentModeScaleAspectFit;
     self.imagedisplay.image = self.detailItem.user.image;
+    if (self.isinfavorites)
+    {
+        [self.favoritesbutton setTitle:[[@"Remove " stringByAppendingString:self.detailItem.user.name] stringByAppendingString:@" from favorites"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.favoritesbutton setTitle:[[@"Add " stringByAppendingString:self.detailItem.user.name] stringByAppendingString:@" to favorites"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidLoad
@@ -52,6 +61,38 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)favs:(id)sender {
+    if ([self isinfavorites])
+    {
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray * favorites = [[defaults objectForKey:@"favorites"] mutableCopy];
+        [favorites removeObject:self.detailItem.user.name];
+        [defaults setObject:favorites forKey:@"favorites"];
+        [defaults synchronize];
+        [self.favoritesbutton setTitle:[[@"Add " stringByAppendingString:self.detailItem.user.name] stringByAppendingString:@" to favorites"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        NSMutableArray * favorites = [[defaults objectForKey:@"favorites"] mutableCopy];
+        if (!favorites)
+        {
+            favorites = [[NSMutableArray alloc] init];
+        }
+        [favorites addObject:self.detailItem.user.name];
+        [defaults setObject:favorites forKey:@"favorites"];
+        [defaults synchronize];
+        [self.favoritesbutton setTitle:[[@"Remove " stringByAppendingString:self.detailItem.user.name] stringByAppendingString:@" from favorites"] forState:UIControlStateNormal];
+    }
+}
+
+- (BOOL) isinfavorites
+{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSArray * favorites = [defaults objectForKey:@"favorites"];
+    return [favorites containsObject:self.detailItem.user.name];
 }
 
 @end

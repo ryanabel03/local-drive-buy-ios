@@ -37,4 +37,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagedisplay;
 
+@property (weak, nonatomic) IBOutlet UIButton *favoritesbutton;
+
+- (IBAction)favs:(id)sender;
+
+- (BOOL) isinfavorites;
+
 @end
