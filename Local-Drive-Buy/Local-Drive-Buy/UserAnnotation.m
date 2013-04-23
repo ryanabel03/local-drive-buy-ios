@@ -16,6 +16,7 @@
     
     _title = listing.user.name;
     _image = listing.user.image;
+    _listings = [[NSMutableArray alloc] init];
     [self addlisting:listing];
     
     return self;
@@ -36,7 +37,7 @@
 
 - (CLLocationCoordinate2D) coordinate
 {
-    if (!CLLocationCoordinate2DIsValid(_coordinate))
+    if (_coordinate.latitude == 0 && _coordinate.longitude == 0)
     {
         Listing * l = self.listings[0];
         if (l.user.addr1 != @"")

@@ -46,6 +46,15 @@
     return _state;
 }
 
+- (NSString *) zip
+{
+    if (!_zip)
+    {
+        _zip = @"";
+    }
+    return _zip;
+}
+
 - (UIImage *) image
 {
     if (!_image)

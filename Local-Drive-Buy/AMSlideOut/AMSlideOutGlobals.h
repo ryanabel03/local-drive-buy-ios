@@ -35,7 +35,6 @@
 #define kSOSectionTitle	@"title"
 #define kSOItemIsAction	@"isAction"
 
-
 FOUNDATION_EXPORT NSString *const AMOptionsEnableGesture;
 FOUNDATION_EXPORT NSString *const AMOptionsEnableShadow;
 FOUNDATION_EXPORT NSString *const AMOptionsSetButtonDone;
@@ -69,26 +68,3 @@ FOUNDATION_EXPORT NSString *const AMOptionsImagePadding;
 FOUNDATION_EXPORT NSString *const AMOptionsTextPadding;
 FOUNDATION_EXPORT NSString *const AMOptionsBadgePosition;
 
-// SlideOut Controller
-#define kSlideValue				260
-#define kBackground				[UIColor colorWithRed:0.19 green:0.22 blue:0.29 alpha:1.0]
-#define kSelectionBackground	[UIColor colorWithRed:0.10 green:0.13 blue:0.20 alpha:1.0]
-
-// Table Cell
-#define kImagePadding		50
-#define kTextPadding		20
-#define kBadgePosition		220
-#define kCellBackground		[UIColor colorWithRed:0.19 green:0.22 blue:0.29 alpha:1.0].CGColor
-#define kUpperSeparator		[UIColor colorWithRed:0.24 green:0.27 blue:0.33 alpha:1.0].CGColor
-#define kLowerSeparator		[UIColor colorWithRed:0.14 green:0.16 blue:0.21 alpha:1.0].CGColor
-#define kCellFontColor		[UIColor colorWithRed:0.77 green:0.8 blue:0.85 alpha:1.0]
-#define kCellShadowColor	[UIColor colorWithRed:0.21 green:0.15 blue:0.19 alpha:1.0]
-
-// Header Cell
-#define	kTextHeaderPadding	10
-#define kGradientUp			[UIColor colorWithRed:0.26 green:0.29 blue:0.36 alpha:1]
-#define kGradientDown		[UIColor colorWithRed:0.22 green:0.25 blue:0.32 alpha:1]
-#define kUpperSeparator		[UIColor colorWithRed:0.24 green:0.27 blue:0.33 alpha:1.0].CGColor
-#define kLowerSeparator		[UIColor colorWithRed:0.14 green:0.16 blue:0.21 alpha:1.0].CGColor
-#define kFontColor			[UIColor colorWithRed:0.49 green:0.50 blue:0.57 alpha:1.0]
-#define kFontShadowColor	[UIColor colorWithRed:0.21 green:0.15 blue:0.19 alpha:1.0]
