@@ -80,7 +80,6 @@
     
     for (NSString * key in self.users)
     {
-        NSLog(@"%@", key);
         UserAnnotation * ua = self.users[key];
             if ([ua.location distanceFromLocation:self.locmanager.location] < MAPZOOM)
             {
@@ -216,7 +215,6 @@
         {
             aview.leftCalloutAccessoryView = nil;
         }
-        NSLog(@"%@", aview.rightCalloutAccessoryView);
         return aview;
     }
     return nil;
@@ -229,7 +227,7 @@
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, MAPZOOM, MAPZOOM)];
+    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, 2 * MAPZOOM, 2 * MAPZOOM)];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
