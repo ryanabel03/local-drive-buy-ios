@@ -188,6 +188,7 @@
 	[self.contentController.topViewController.navigationItem setLeftBarButtonItem:_barButton];
     UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
     [self.contentController.topViewController.navigationItem setTitleView:titleview];
+    [self.tableView setContentSize : CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height + 300)];
 }
 
 - (void)loadView
@@ -196,8 +197,8 @@
 	[view setBackgroundColor:self.options[AMOptionsBackground]];
     
     // Table View setup
-	self.tableView = [[AMTableView alloc] initWithFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height + 60)];
-    [self.tableView setContentSize : CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height +200)];
+	self.tableView = [[AMTableView alloc] initWithFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height + 120)];
+    //[self.tableView setContentSize : CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height +200)];
 
 	self.tableView.options = self.options;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
