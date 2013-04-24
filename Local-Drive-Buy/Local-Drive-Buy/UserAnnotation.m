@@ -36,26 +36,35 @@
     //asdf
 }
 
-- (CLLocationCoordinate2D) coordinate
+- (CLLocation *) location
 {
-    if (_coordinate.latitude == 0 && _coordinate.longitude == 0)
+    if (!_location)
     {
         Listing * l = self.listings[0];
         if (l.user.addr1 != @"")
         {
             NSString * address = [l.user.addr1 stringByAppendingString:[@" " stringByAppendingString:[l.user.addr2 stringByAppendingString:[@", " stringByAppendingString:[l.user.city stringByAppendingString:[@", " stringByAppendingString:[l.user.state stringByAppendingString:[@", " stringByAppendingString:l.user.zip]]]]]]]];
             CLGeocoder * geocoder = [[CLGeocoder alloc] init];
-            [geocoder geocodeAddressString:address completionHandler:^(NSArray * placemarks, NSError * error)
-             {
-                 if (placemarks[0])
+            dispatch_async(dispatch_get_main_queue(), ^
+            {
+                [geocoder geocodeAddressString:address completionHandler:^(NSArray * placemarks, NSError * error)
                  {
-                     CLPlacemark * possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
-                     _coordinate = CLLocationCoordinate2DMake(possiblelocation.location.coordinate.latitude, possiblelocation.location.coordinate.longitude);
-                 }
-             }];
+                     if (placemarks[0])
+                     {
+                         CLPlacemark * possiblelocation = [[CLPlacemark alloc] initWithPlacemark:placemarks[0]];
+                         _location = [[CLLocation alloc] initWithLatitude:possiblelocation.location.coordinate.latitude longitude:possiblelocation.location.coordinate.longitude];
+                     }
+                 }];
+            });
         }
     }
-    return _coordinate;
+    NSLog(@"%f  %f", _location.coordinate.longitude, _location.coordinate.latitude);
+    return _location;
+}
+
+- (CLLocationCoordinate2D) coordinate
+{
+    return self.location.coordinate;
 }
 
 @end

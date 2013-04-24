@@ -22,63 +22,7 @@
     [self.searchbar setDelegate:self];
     [self.locmanager setDelegate:self];
     [self.mapview setDelegate:self];
-    [self.mapview userTrackingMode];
-    [self performSelectorOnMainThread:@selector(displayListings) withObject:nil waitUntilDone:TRUE];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)displayListings
-{
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    id ul = [self.mapview userLocation];
-    NSMutableArray * pins = [[NSMutableArray alloc] initWithArray:[self.mapview annotations]];
-    if (ul)
-    {
-        [pins removeObject:ul];
-    }
-    [self.mapview removeAnnotations:pins];
-    
-    NSMutableDictionary * users = [[NSMutableDictionary alloc] init];
-    for (Listing * listing in _objects)
-    {
-        if(![users objectForKey:listing.user.name])
-        {
-            [users setObject:[[UserAnnotation alloc] init_withlisting:listing] forKey:listing.user.name];
-        }
-        else
-        {
-            [users[listing.user.name] addlisting:listing];
-        }
-    }
-    
-    for (NSString * key in users)
-    {
-        UserAnnotation * ua = users[key];
-        CLLocation * userlocation = [[CLLocation alloc] initWithLatitude:ua.coordinate.latitude longitude:ua.coordinate.longitude];
-            if ([userlocation distanceFromLocation:self.locmanager.location] < MAPZOOM)
-            {
-                //if (ua.hasedible == appDelegate.checkEdible)
-                    dispatch_async(dispatch_get_main_queue(), ^
-                    {
-                        [self.mapview addAnnotation:ua];
-                    });
-                //else if (ua.hasgoods == appDelegate.checkGoods)
-           }
-    }
-}
-
--(void) viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-    AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
-    appdelegate.slideoutController.contentController.navigationBarHidden = NO;
-    NSURL * baseurl = [NSURL URLWithString:[WEBAPPPATH stringByAppendingString:@"/"]];
+    [self.mapview userTrackingMode];NSURL * baseurl = [NSURL URLWithString:[WEBAPPPATH stringByAppendingString:@"/"]];
     AFHTTPClient * client = [AFHTTPClient clientWithBaseURL:baseurl];
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     RKObjectManager * objectmanager = [[RKObjectManager alloc] initWithHTTPClient:client];
@@ -116,6 +60,46 @@
      }];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)displayListings
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    id ul = [self.mapview userLocation];
+    NSMutableArray * pins = [[NSMutableArray alloc] initWithArray:[self.mapview annotations]];
+    if (ul)
+    {
+        [pins removeObject:ul];
+    }
+    [self.mapview removeAnnotations:pins];
+    
+    for (NSString * key in self.users)
+    {
+        UserAnnotation * ua = self.users[key];
+            if ([ua.location distanceFromLocation:self.locmanager.location] < MAPZOOM)
+            {
+                //if (ua.hasedible == appDelegate.checkEdible)
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
+                //else if (ua.hasgoods == appDelegate.checkGoods)
+           }
+    }
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+    AppDelegate * appdelegate = [[UIApplication sharedApplication] delegate];
+    appdelegate.slideoutController.contentController.navigationBarHidden = NO;
+}
+
 -(void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -145,7 +129,6 @@
             aview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
         }
         UserAnnotation * u = annotation;
-        NSLog(@"%f", u.coordinate.latitude);
         aview.annotation = annotation;
         aview.canShowCallout = YES;
         aview.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
@@ -216,6 +199,28 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
     NSLog(@"User canceled search");
     [searchBar resignFirstResponder];
+}
+
+- (NSMutableDictionary *) users
+{
+    if (!_users)
+    {
+        _users = [[NSMutableDictionary alloc] init];for (Listing * listing in _objects)
+        {
+            if(![_users objectForKey:listing.user.name])
+            {
+                [_users setObject:[[UserAnnotation alloc] init_withlisting:listing] forKey:listing.user.name];
+            }
+            else
+            {
+                [_users[listing.user.name] addlisting:listing];
+                NSLog(@"%@", listing.description);
+            }
+        }
+    }
+    
+    
+    return _users;
 }
 
 @end

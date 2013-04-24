@@ -13,7 +13,7 @@
 @interface UserAnnotation : NSObject <MKAnnotation>
 
 @property (strong, nonatomic) NSString * title;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (strong, nonatomic) CLLocation * location;
 @property (strong, nonatomic) NSMutableArray * listings;
 @property (nonatomic) BOOL hasedible;
 @property (nonatomic) BOOL hasbrewery;
@@ -28,6 +28,7 @@
 @property (nonatomic) BOOL hasfurniture;
 @property (nonatomic) BOOL hasother;
 @property (strong, nonatomic) UIImage * image;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 - (UserAnnotation *) init_withlisting:(Listing *) listing;
 - (void) addlisting:(Listing *) newlisting;

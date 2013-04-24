@@ -26,4 +26,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
 
+@property (strong, nonatomic) NSMutableDictionary * users;
+
 @end
