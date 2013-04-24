@@ -12,7 +12,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
+{
+    self.checkedible = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     
 	UIViewController* controller;
@@ -26,42 +27,42 @@
     
     [self.slideoutController addSectionWithTitle:@"Food"];//Edible
     [self.slideoutController addActionToLastSection:^{
-		self.pinSelector = (NSMutableString *)@"Edible";
+		self.checkedible = !self.checkedible;
 	}
 											 tagged:3
 										  withTitle:@"Edible"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Brewery/Winery");
+		self.checkbrewery = !self.checkbrewery;
 	}
 											 tagged:4
 										  withTitle:@"Brewery/Winery"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Farmer's Market");
+		self.checkfarmersmarket = !self.checkfarmersmarket;
 	}
 											 tagged:5
 										  withTitle:@"Farmer's Market"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Restaurant");
+		self.checkrestaurant = !self.checkrestaurant;
 	}
 											 tagged:6
 										  withTitle:@"Restaurant"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Roadside Stand");
+		self.checkroadsidestand = !self.checkroadsidestand;
 	}
 											 tagged:7
 										  withTitle:@"Roadside Stand"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"U-Pick/Orchard");
+		self.checkupickorchard = !self.checkupickorchard;
 	}
 											 tagged:8
 										  withTitle:@"U-Pick/Orchard"
@@ -70,42 +71,42 @@
     [self.slideoutController addSectionWithTitle:@"Stuff"];//Goods
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Goods");
+		self.checkgoods = !self.checkgoods;
 	}
 											 tagged:9
 										  withTitle:@"Goods"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Arts & Crafts");
+		self.checkarsandcrafts = !self.checkarsandcrafts;
 	}
 											 tagged:10
 										  withTitle:@"Arts & Crafts"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Clothing");
+		self.checkclothing = !self.checkclothing;
 	}
 											 tagged:11
 										  withTitle:@"Clothing"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Health & Fitness");
+		self.checkhealthandfitness = !self.checkhealthandfitness;
 	}
 											 tagged:12
 										  withTitle:@"Health & Fitness"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Furniture");
+		self.checkfurniture = !self.checkfurniture;
 	}
 											 tagged:13
 										  withTitle:@"Furniture"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
-		NSLog(@"Other");
+		self.checkother = !self.checkother;
 	}
 											 tagged:14
 										  withTitle:@"Other"

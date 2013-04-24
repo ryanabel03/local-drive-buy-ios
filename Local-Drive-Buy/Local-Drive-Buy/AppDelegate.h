@@ -17,4 +17,17 @@
 
 @property (strong, nonatomic) NSMutableString *pinSelector;
 
+@property (nonatomic) BOOL checkedible;
+@property (nonatomic) BOOL checkbrewery;
+@property (nonatomic) BOOL checkfarmersmarket;
+@property (nonatomic) BOOL checkrestaurant;
+@property (nonatomic) BOOL checkroadsidestand;
+@property (nonatomic) BOOL checkupickorchard;
+@property (nonatomic) BOOL checkgoods;
+@property (nonatomic) BOOL checkarsandcrafts;
+@property (nonatomic) BOOL checkclothing;
+@property (nonatomic) BOOL checkhealthandfitness;
+@property (nonatomic) BOOL checkfurniture;
+@property (nonatomic) BOOL checkother;
+
 @end

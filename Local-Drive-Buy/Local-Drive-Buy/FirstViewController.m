@@ -34,6 +34,7 @@
 
 -(void)displayListings
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     id ul = [self.mapview userLocation];
     NSMutableArray * pins = [[NSMutableArray alloc] initWithArray:[self.mapview annotations]];
     if (ul)
@@ -69,8 +70,6 @@
         //else if (ua.hasgoods == appDelegate.checkGoods)
         }
     }
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(appDelegate.pinSelector);
 }
 
 -(void) viewWillAppear:(BOOL)animated

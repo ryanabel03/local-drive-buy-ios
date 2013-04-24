@@ -186,6 +186,8 @@
 	[self.contentController.view removeFromSuperview];
 	[self.view addSubview:self.contentController.view];
 	[self.contentController.topViewController.navigationItem setLeftBarButtonItem:_barButton];
+    UIImageView * titleview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ldb_logo.png"]];
+    [self.contentController.topViewController.navigationItem setTitleView:titleview];
 }
 
 - (void)loadView
