@@ -25,7 +25,7 @@
 -(void) addlisting:(Listing *)newlisting
 {
     [self.listings addObject:newlisting];
-    if ([newlisting.category isEqualToString:@"Edible"])
+    if ([newlisting.category isEqualToString:@"Edibles"])
     {
         self.hasedible = TRUE;
     }

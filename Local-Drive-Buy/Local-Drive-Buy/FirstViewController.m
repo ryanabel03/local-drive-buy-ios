@@ -23,6 +23,7 @@
     [self.locmanager setDelegate:self];
     [self.mapview setDelegate:self];
     [self.mapview userTrackingMode];
+    [self displayListings];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,10 +57,17 @@
     
     for (NSString * key in users)
     {
-        //UserAnnotation * ua = users[key];
+        UserAnnotation * ua = users[key];
+        CLLocation * userlocation = [[CLLocation alloc] initWithLatitude:ua.coordinate.latitude longitude:ua.coordinate.longitude];
+        if ([userlocation distanceFromLocation:self.mapview.userLocation.location] < MAPZOOM)
+        {
         //if (ua.hasedible == appDelegate.checkEdible)
-           [self.mapview addAnnotation:users[key]];
+           dispatch_async(dispatch_get_main_queue(), ^
+                          {
+                              [self.mapview addAnnotation:ua];
+                          });
         //else if (ua.hasgoods == appDelegate.checkGoods)
+        }
     }
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(appDelegate.pinSelector);
@@ -113,7 +121,6 @@
 {
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
-    [self displayListings];
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -187,7 +194,7 @@
 
 -(void) filterContentForSearchText:(NSString *)searchText
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.title contains[cd] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"ANY {SELF.title, SELF.description, SELF.user.name, SELF.category, SELF.subcategory} contains[cd] %@", searchText];
     self.searchresults = [self.objects filteredArrayUsingPredicate:resultPredicate];
 }
 
