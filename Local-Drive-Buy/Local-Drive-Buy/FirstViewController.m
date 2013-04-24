@@ -226,7 +226,7 @@
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, MAPZOOM, MAPZOOM)];
+    [self.mapview setRegion:MKCoordinateRegionMakeWithDistance(self.mapview.userLocation.coordinate, 2 * MAPZOOM, 2 * MAPZOOM)];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
