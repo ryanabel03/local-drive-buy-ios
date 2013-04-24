@@ -14,6 +14,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.checkedible = YES;
+    self.checkbrewery = YES;
+    self.checkfarmersmarket = YES;
+    self.checkrestaurant = YES;
+    self.checkroadsidestand = YES;
+    self.checkupickorchard = YES;
+    self.checkgoods = YES;
+    self.checkarsandcrafts = YES;
+    self.checkclothing = YES;
+    self.checkhealthandfitness = YES;
+    self.checkfurniture = YES;
+    self.checkother = YES;
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     
 	UIViewController* controller;

@@ -62,7 +62,7 @@
         CLLocation * userlocation = [[CLLocation alloc] initWithLatitude:ua.coordinate.latitude longitude:ua.coordinate.longitude];
         //if ([userlocation distanceFromLocation:self.mapview.userLocation.location] < MAPZOOM)
         //{
-        //if (ua.hasedible == appDelegate.checkEdible)
+        if (ua.hasedible == appDelegate.checkedible)
            dispatch_async(dispatch_get_main_queue(), ^
                           {
                               [self.mapview addAnnotation:ua];

@@ -33,7 +33,9 @@
     {
         self.hasgoods = TRUE;
     }
-    //asdf
+    else if ([newlisting.category isEqualToString:@"Restaurant"]){
+        self.hasrestaurant = TRUE;
+    }
 }
 
 - (CLLocationCoordinate2D) coordinate
