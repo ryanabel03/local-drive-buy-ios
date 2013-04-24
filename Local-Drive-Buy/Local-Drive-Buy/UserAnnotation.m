@@ -90,7 +90,6 @@
             });
         }
     }
-    NSLog(@"%f  %f", _location.coordinate.longitude, _location.coordinate.latitude);
     return _location;
 }
 

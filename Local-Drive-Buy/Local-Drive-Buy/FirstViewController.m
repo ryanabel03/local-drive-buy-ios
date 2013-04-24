@@ -80,7 +80,6 @@
     
     for (NSString * key in self.users)
     {
-        NSLog(@"%@", key);
         UserAnnotation * ua = self.users[key];
             if ([ua.location distanceFromLocation:self.locmanager.location] < MAPZOOM)
             {
@@ -215,7 +214,6 @@
         {
             aview.leftCalloutAccessoryView = nil;
         }
-        NSLog(@"%@", aview.rightCalloutAccessoryView);
         return aview;
     }
     return nil;
