@@ -53,6 +53,7 @@
          NSArray * result = [mappingresult array];
          self.objects = [result mutableCopy];
          [self displayListings];
+         self.listingsloaded = TRUE;
      }
                             failure:^(RKObjectRequestOperation * operation, NSError * error)
      {
@@ -79,10 +80,11 @@
     
     for (NSString * key in self.users)
     {
+        NSLog(@"%@", key);
         UserAnnotation * ua = self.users[key];
             if ([ua.location distanceFromLocation:self.locmanager.location] < MAPZOOM)
             {
-                if (ua.hasedible == appDelegate.checkedible){
+                if (ua.hasedible && appDelegate.checkedible){
                     dispatch_async(dispatch_get_main_queue(), ^
                     {
                         [self.mapview addAnnotation:ua];
@@ -170,6 +172,10 @@
 {
     [super viewDidAppear:animated];
     [self.locmanager startMonitoringSignificantLocationChanges];
+    if (self.listingsloaded)
+    {
+        [self displayListings];
+    }
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -271,7 +277,7 @@
 {
     if (!_users)
     {
-        _users = [[NSMutableDictionary alloc] init];for (Listing * listing in _objects)
+        _users = [[NSMutableDictionary alloc] init];for (Listing * listing in self.objects)
         {
             if(![_users objectForKey:listing.user.name])
             {

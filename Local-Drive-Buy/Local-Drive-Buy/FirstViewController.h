@@ -28,4 +28,6 @@
 
 @property (strong, nonatomic) NSMutableDictionary * users;
 
+@property (nonatomic) BOOL listingsloaded;
+
 @end
