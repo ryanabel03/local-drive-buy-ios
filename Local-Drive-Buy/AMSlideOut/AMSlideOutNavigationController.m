@@ -198,7 +198,6 @@
     
     // Table View setup
 	self.tableView = [[AMTableView alloc] initWithFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height + 120)];
-    //[self.tableView setContentSize : CGSizeMake([[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height +200)];
 
 	self.tableView.options = self.options;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -241,6 +240,7 @@
 	
 	[self.tableView setDelegate:self];
 	[self.tableView setDataSource:self];
+    self.tableView.allowsMultipleSelection= YES;
 	
 	if ([self.options[AMOptionsUseBorderedButton] boolValue]) {
 		_barButton = [[UIBarButtonItem alloc] initWithImage:self.options[AMOptionsButtonIcon]

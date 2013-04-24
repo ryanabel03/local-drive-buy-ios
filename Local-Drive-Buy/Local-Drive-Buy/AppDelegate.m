@@ -35,7 +35,7 @@
 	
 	[self.slideoutController addSectionWithTitle:@""];//All
     
-    [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Filter" andIcon:@""];
+    [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Double tap here to filter out" andIcon:@""];
     
     [self.slideoutController addSectionWithTitle:@"Food"];//Edibles
     [self.slideoutController addActionToLastSection:^{
