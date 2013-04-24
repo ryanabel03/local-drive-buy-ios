@@ -33,7 +33,39 @@
     {
         self.hasgoods = TRUE;
     }
-    //asdf
+    else if ([newlisting.subcategory isEqualToString:@"Restaurant"]){
+        self.hasrestaurant = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"Brewery / Winery"]){
+        self.hasbrewery = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"U-Pick / Orchard"])
+    {
+        self.hasupickorchard = TRUE;
+    }
+    else if ([newlisting.subcategory isEqualToString:@"Farmer's Market"]){
+        self.hasfarmersmarket = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"Brewery / Winery"]){
+        self.hasbrewery = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"Arts & Crafts"])
+    {
+        self.hasarsandcrafts = TRUE;
+    }
+    else if ([newlisting.subcategory isEqualToString:@"Clothing"]){
+        self.hasclothing = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"Health & Fitness"]){
+        self.hashealthandfitness = TRUE;
+    }
+    else if ([newlisting.category isEqualToString:@"Furniture"])
+    {
+        self.hasfurniture = TRUE;
+    }
+    else if ([newlisting.subcategory isEqualToString:@"Other"]){
+        self.hasother = TRUE;
+    }    
 }
 
 - (CLLocation *) location
