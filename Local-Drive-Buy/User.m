@@ -61,7 +61,6 @@
     {
         NSURL * imageurl = [[NSURL alloc] initWithString:[WEBAPPPATH stringByAppendingString:self.imageaddress]];
         _image = [[UIImage alloc] initWithData:[[NSData alloc] initWithContentsOfURL:imageurl]];
-        NSLog(@"%@", imageurl);
     }
     return _image;
 }
