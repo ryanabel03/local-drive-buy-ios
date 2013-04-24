@@ -23,7 +23,7 @@
     [self.locmanager setDelegate:self];
     [self.mapview setDelegate:self];
     [self.mapview userTrackingMode];
-    [self displayListings];
+    [self performSelectorOnMainThread:@selector(displayListings) withObject:nil waitUntilDone:TRUE];
 }
 
 - (void)didReceiveMemoryWarning
