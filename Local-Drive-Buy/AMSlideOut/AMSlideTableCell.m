@@ -43,7 +43,7 @@
 	self.badge.font = self.options[AMOptionsCellBadgeFont];
 	self.badge.textColor = self.options[AMOptionsCellFontColor];
 	self.badge.adjustsFontSizeToFitWidth = YES;
-	self.badge.textAlignment = UITextAlignmentCenter;
+	self.badge.textAlignment = NSTextAlignmentCenter;
 	self.badge.opaque = YES;
 	self.badge.backgroundColor = [UIColor clearColor];
 	self.badge.shadowOffset = CGSizeMake(0, 1);
