@@ -62,12 +62,78 @@
         CLLocation * userlocation = [[CLLocation alloc] initWithLatitude:ua.coordinate.latitude longitude:ua.coordinate.longitude];
             if ([userlocation distanceFromLocation:self.locmanager.location] < MAPZOOM)
             {
-                //if (ua.hasedible == appDelegate.checkEdible)
+                if (ua.hasedible == appDelegate.checkedible){
                     dispatch_async(dispatch_get_main_queue(), ^
                     {
                         [self.mapview addAnnotation:ua];
                     });
-                //else if (ua.hasgoods == appDelegate.checkGoods)
+                }
+                else if (ua.hasgoods && appDelegate.checkgoods){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
+                }
+                else if (ua.hasbrewery && appDelegate.checkbrewery){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
+                }
+                else if (ua.hasfarmersmarket && appDelegate.checkfarmersmarket){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
+                }
+                else if (ua.hasrestaurant && appDelegate.checkrestaurant){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
+                }
+                else if (ua.hasroadsidestand && appDelegate.checkroadsidestand){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hasupickorchard && appDelegate.checkupickorchard){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hasarsandcrafts && appDelegate.checkarsandcrafts){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hasclothing && appDelegate.checkclothing){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hashealthandfitness && appDelegate.checkhealthandfitness){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hasfurniture && appDelegate.checkfurniture){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
+                else if (ua.hasother && appDelegate.checkother){
+                    dispatch_async(dispatch_get_main_queue(), ^
+                                   {
+                                       [self.mapview addAnnotation:ua];
+                                   });
+                }
            }
     }
 }

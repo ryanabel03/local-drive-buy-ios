@@ -35,9 +35,9 @@
 	
 	[self.slideoutController addSectionWithTitle:@""];//All
     
-    [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Map" andIcon:@""];
+    [self.slideoutController addViewControllerToLastSection:controller tagged:1 withTitle:@"Filter" andIcon:@""];
     
-    [self.slideoutController addSectionWithTitle:@"Food"];//Edible
+    [self.slideoutController addSectionWithTitle:@"Food"];//Edibles
     [self.slideoutController addActionToLastSection:^{
 		self.checkedible = !self.checkedible;
 	}
@@ -106,21 +106,21 @@
     [self.slideoutController addActionToLastSection:^{
 		self.checkhealthandfitness = !self.checkhealthandfitness;
 	}
-											 tagged:12
+											 tagged:11
 										  withTitle:@"Health & Fitness"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
 		self.checkfurniture = !self.checkfurniture;
 	}
-											 tagged:13
+											 tagged:11
 										  withTitle:@"Furniture"
 											andIcon:@""];
     
     [self.slideoutController addActionToLastSection:^{
 		self.checkother = !self.checkother;
 	}
-											 tagged:14
+											 tagged:11
 										  withTitle:@"Other"
 											andIcon:@""];
     
