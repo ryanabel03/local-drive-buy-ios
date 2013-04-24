@@ -60,15 +60,15 @@
     {
         UserAnnotation * ua = users[key];
         CLLocation * userlocation = [[CLLocation alloc] initWithLatitude:ua.coordinate.latitude longitude:ua.coordinate.longitude];
-        dispatch_async(dispatch_get_main_queue(), ^
-        {
             if ([userlocation distanceFromLocation:self.locmanager.location] < MAPZOOM)
             {
                 //if (ua.hasedible == appDelegate.checkEdible)
-                    [self.mapview addAnnotation:ua];
+                    dispatch_async(dispatch_get_main_queue(), ^
+                    {
+                        [self.mapview addAnnotation:ua];
+                    });
                 //else if (ua.hasgoods == appDelegate.checkGoods)
-            }
-        });
+           }
     }
 }
 
